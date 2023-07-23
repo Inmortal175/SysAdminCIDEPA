@@ -1,0 +1,47 @@
+div{
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+}
+label{
+  cursor: pointer;
+}
+
+input.icono{
+  display: none;
+}
+
+div label.label-icono {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  width: 45px;
+  height: 25px;
+  background: #cccccc;
+  border-radius: 50px;
+  transition: 300ms linear;
+}
+
+div label.label-icono:before {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: left 300ms linear;
+}
+
+div input.icono:checked+label.label-icono {
+  background: #0073aa;
+}
+
+div input.icono:checked+label.label-icono:before {
+  left: 23px;
+}

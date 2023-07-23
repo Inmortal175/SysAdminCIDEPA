@@ -1,0 +1,80 @@
+.container{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+/* Estilos compartidos para todos los botones */
+.button{
+  background: transparent;
+  color: dodgerblue;
+  border-radius: 6px;
+  border: 2px solid dodgerblue;
+  padding: 7px 16px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.button:hover{
+  color: white;
+  background: white;
+}
+.button:active{
+  filter: contrast(1.5);
+}
+/* Estilos para botón primario */
+.primary-button {
+  border: 2px solid #0073aa;
+  color: #0073aa;
+}
+
+.primary-button:hover {
+  background-color: #0073aa;
+  color: #ffffff;
+}
+/* Estilos para botón de éxito */
+.success-button {
+  border: 2px solid #28a745;
+  color: #28a745;
+}
+
+.success-button:hover {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+/* Estilos para botón de advertencia */
+.warning-button {
+  border: 2px solid #ffc107;
+  color: #ffc107;
+}
+.warning-button:hover{
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Estilos para botón de información */
+.info-button {
+  border: 2px solid #17a2b8;
+  color: #17a2b8;
+}
+
+.info-button:hover {
+  background-color: #17a2b8;
+  color: #ffffff;
+}
+/*
+.info-button:active{
+  background-color: #1b8596;
+  border: 2px solid #1b8596;
+} */
+/* Estilos para botón de peligro */
+.danger-button {
+  border: 2px solid #dc3545;
+  color: #dc3545;
+}
+
+.danger-button:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}

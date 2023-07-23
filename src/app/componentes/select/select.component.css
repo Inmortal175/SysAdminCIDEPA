@@ -1,0 +1,48 @@
+.select{
+  position: relative;
+  display: flex;
+}
+
+.field__select{
+  width: 100%;
+  padding: 13px 15px;
+  height: 28px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.def-option{
+  cursor: not-allowed;
+}
+
+.select__label{
+  position: absolute;
+  top: -4px;
+  margin: 0 10px;
+  padding: 0 6px;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: lighter;
+}
+
+
+.field__select:focus-visible{
+  outline: 2px solid var(--text-color-blue);
+  border: none;
+}
+
+.field__select:focus{
+  outline: 2px solid var(--text-color-blue);
+  border: none;
+}
+
+.field__select:focus+.select__label{
+  color: var(--text-color-blue);
+}
+
+.option-active{
+  background-color: #0073aa;
+  color: white;
+  text-transform: uppercase;
+}

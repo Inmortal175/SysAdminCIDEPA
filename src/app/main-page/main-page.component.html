@@ -1,0 +1,141 @@
+<div #main class="admin-container">
+  <header>
+    <div class="header">
+      <div class="name-app">AD-CIDEPA AMDIN</div>
+      <div class="navbar-container">
+        <div class="bars-icon">
+          <div #barra_icon class="bar">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="maximize" (click)="toggleFullScreen()">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </div>
+        </div>
+        <!-- barra de usuario -->
+        <div class="user-bar">
+          <div #user_tag class="user-tag">
+            <div class="user-profile">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp"
+                alt=""
+              />
+            </div>
+            <div class="username">
+              <div class="name">FR33D</div>
+              <div class="user-office">Presidente</div>
+            </div>
+          </div>
+          <div #user_options class="user-options hide">
+            <span class="marcador"></span>
+            <ul class="profile-items">
+              <li class="profile-item">
+                <a class="profile-link">
+                  <i class="fa-solid fa-user-edit"></i>Editar Perfil</a
+                >
+              </li>
+              <li class="profile-item">
+                <a class="profile-link"
+                  ><i class="fa-solid fa-envelope"></i>Mensajes</a
+                >
+              </li>
+              <li class="profile-item">
+                <a class="profile-link"
+                  ><i class="fa-solid fa-power-off"></i>Cerrar Sesión</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end barra de usuario -->
+      </div>
+    </div>
+  </header>
+  <div class="lateral-bar">
+    <div #menu class="menu">
+      <ul class="items">
+        <li class="item">
+          <a
+            [routerLink]="['/main']"
+            class="nav-link active-link"
+            (click)="ItemVisit(1)"
+            ><i class="fa-solid fa-chart-line"></i><span class="">Panel</span
+            ><span class="marcador m-activo"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a class="nav-link" (click)="ItemVisit(2)">
+            <i class="fa-solid fa-house-user"></i
+            ><span class="">Registro de predios</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a
+            [routerLink]="['registro/propietario']"
+            class="nav-link"
+            (click)="ItemVisit(3)"
+            ><i class="fa-solid fa-users"></i><span class="">Usuarios</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a class="nav-link" (click)="ItemVisit(4)"
+            ><i class="fa-solid fa-street-view"></i
+            ><span class="">Registro de calles</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a class="nav-link" (click)="ItemVisit(5)"
+            ><i class="fa-solid fa-circle-info"></i><span class="">Deudas</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a class="nav-link" (click)="ItemVisit(6)"
+            ><i class="fa-solid fa-comments-dollar"></i
+            ><span class="">Pagos</span><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a class="nav-link" (click)="ItemVisit(7)"
+            ><i class="fa-solid fa-list-check"></i
+            ><span class="">Registro de Asistencia</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a class="nav-link" (click)="ItemVisit(8)"
+            ><i class="fa-solid fa-cash-register"></i><span class="">Caja</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+      </ul>
+      <ul class="user-items">
+        <li class="user-item">
+          <a class="user-link"
+            ><i class="fa-solid fa-user-pen"></i>
+            <span class="">Editar perfil</span
+            ><span class="marcador m-activo"></span
+          ></a>
+        </li>
+        <li class="user-item">
+          <a class="user-link"
+            ><i class="fa-solid fa-power-off"></i>
+            <span class="">Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="cuerpo">
+    <div class="main">
+      <router-outlet
+        ><app-spinner *ngIf="showSpinner"></app-spinner
+      ></router-outlet>
+    </div>
+    <div #footer class="footer">
+      @copyright: Franklin Figueroa Perez - 2023
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="select">
+  <select
+    class="field__select"
+    id="select_option"
+    (change)="valueChange($event)"
+  >
+    <option
+      class="def-option"
+      [value]="value"
+      selected
+      disabled
+      [class.def-option]="true"
+      >Seleccione una opción</option
+    >
+    <option
+      *ngFor="let option of listContent"
+      [value]="option.value"
+      [class.option-active]="option.value == value"
+      >{{option.text}}</option
+    >
+  </select>
+  <label for="select_option" class="select__label">Elija un valor</label>
+</div>
