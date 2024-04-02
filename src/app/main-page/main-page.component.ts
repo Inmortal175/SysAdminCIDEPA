@@ -64,7 +64,7 @@ export class MainPageComponent implements AfterViewInit, OnInit{
   //manejador de eventos con AfterView Init
 
   ngAfterViewInit(): void {
-    this.ItemVisit(3)
+    this.ItemVisit(1, 2)
     const RENDER = this.render;//renderer 2
 
     //constantes para perfil de usuario
@@ -151,12 +151,19 @@ export class MainPageComponent implements AfterViewInit, OnInit{
     RENDER.listen(BAR_ICON, 'click', BarraToogle)
   }
 
-  ItemVisit(num_item: number) {
+  Marcador_anterior : any
+  ItemVisit(num_section: number, num_item: number) {
+    if (this.Marcador_anterior) {
+      this.render.removeClass(this.Marcador_anterior, 'm-activo')
+    }
     const MENU = this.menu.nativeElement;
-    const MARCADOR = MENU.children[0].children[num_item - 1].children[0].children[2]
+    const MARCADOR = MENU.children[num_section == 2 ? 2 : num_section - 1].children[num_item - 1].children[0].children[2]
+    this.Marcador_anterior = MARCADOR
     for (let i = 0; i < MENU.children[0].children.length; i++){
       this.render.removeClass(MENU.children[0].children[i].children[0].children[2], 'm-activo')
     }
     this.render.addClass(MARCADOR, 'm-activo')
   }
+
+
 }

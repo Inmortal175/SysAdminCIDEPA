@@ -1,0 +1,411 @@
+<div class="main">
+  <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-stepper
+    orientation="horizontal"
+    [linear]="isLinear"
+    #stepper
+    [animationDuration]="'500'"
+  >
+    <mat-step
+      label="Seleccione un predio"
+      state="chat"
+      [stepControl]="firstFormGroup"
+      [completed]="true"
+      [editable]="false"
+    >
+      <!-- listado de predios -->
+
+      <div class="row">
+        <div class="col">
+          <!-- table -->
+          <div class="card mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+              <!-- Position Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>No.</th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+              </ng-container>
+              <!-- surname Column -->
+              <ng-container matColumnDef="sector">
+                <th mat-header-cell *matHeaderCellDef>Sector</th>
+                <td mat-cell *matCellDef="let element">{{element.sector}}</td>
+              </ng-container>
+              <!-- Name Column -->
+              <ng-container matColumnDef="calle">
+                <th mat-header-cell *matHeaderCellDef>Calle</th>
+                <td mat-cell *matCellDef="let element">{{element.calle}}</td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="manzana">
+                <th mat-header-cell *matHeaderCellDef>Manzana</th>
+                <td mat-cell *matCellDef="let element">{{element.manzana}}</td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="lote">
+                <th mat-header-cell *matHeaderCellDef>Lote</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.lote}}
+                </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="comunero">
+                <th mat-header-cell *matHeaderCellDef>Propietario</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.comunero}}
+                </td>
+              </ng-container>
+
+              <!-- columna de acciones -->
+              <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td mat-cell *matCellDef="let botonEl">
+                  <div class="btn-container">
+                    <app-button
+                      [buttonName]="'Seleecionar este predio'"
+                      [icon_class]="'fa-check'"
+                      [btn_class]="'btn-success'"
+                      (click)="PredioSelected(botonEl.id)"
+                    ></app-button>
+                  </div>
+                </td>
+              </ng-container>
+              <tr
+                mat-row
+                *matRowDef="let row; columns: displayedColumns;"
+                class="select-row"
+              ></tr>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+            </table>
+            <mat-paginator
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page"
+              showFirstLastButtons
+            >
+            </mat-paginator>
+          </div>
+          <!-- end table -->
+        </div>
+      </div>
+    </mat-step>
+    <mat-step
+      [stepControl]="selectionForm"
+      label="Seleciona las deudas"
+      state="chat"
+      [editable]="false"
+    >
+      <!-- selecion de deudas -->
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <div class="title-prop">
+                <i class="fa-solid fa-user"></i> Señor (a):
+              </div>
+              <span>&nbsp;</span>
+              <div class="text-prop">Figueroa Perez Franklin (propietario)</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="title-prop">
+                <i class="fa-solid fa-home"></i> Vivienda:
+              </div>
+              <div class="text-prop">
+                Jr. Las Flores <strong>Mz.</strong> "F" <strong>Lt.</strong> 03
+              </div>
+            </td>
+            <td>
+              <div class="title-prop">
+                <i class="fa-solid fa-clipboard-list"></i> Padrón:
+              </div>
+              <div class="text-prop" *ngIf="false">
+                <i class="fa-solid fa-circle padron-active"></i>
+                Activo
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div class="text-prop" *ngIf="true">
+                <i class="fa-solid fa-circle padron-inactive"></i>
+                Inactivo
+                <i
+                  class="fa-solid fa-triangle-exclamation"
+                  style="color: orange;"
+                ></i>
+              </div>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <i
+                class="fa-solid fa-circle-exclamation fa-xl fa-beat-fade"
+                style="color: #007bb8; cursor: pointer;"
+                (click)="showInfoPadron()"
+              >
+              </i>
+              <span style="color: rgb(150, 150, 150);"> info.</span>
+            </td>
+          </tr>
+          <tr *ngIf="true">
+            <td colspan="2">
+              <div class="text-center">
+                <app-button
+                  [btn_class]="'btn-primary'"
+                  [icon_class]="'fa-clipboard-list fa-beat-fade'"
+                  [buttonName]="'¡Empadronar Ahora!'"
+                  [addClass]="'fa-fade'"
+                ></app-button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- listado de deudas de la propiedad -->
+      <div class="main-container-deudas">
+        <div>
+          <h3>Listado de Deuda pendiente</h3>
+          <div class="cabecera-deuda">
+            <table>
+              <tr>
+                <td><strong>Motivo</strong></td>
+                <td><strong>Fecha</strong></td>
+                <td><strong>Monto</strong></td>
+                <td><strong>Acción</strong></td>
+              </tr>
+            </table>
+          </div>
+          <div class="main-select-container" (change)="chxd($event)">
+            <div #items *ngFor="let item of availableItems" class="item-deuda">
+              <label
+                class="item-deuda-text"
+                role="button"
+                [class.hide-item-deuda]="selectedItems.includes(item)"
+                [class.show-item-deuda]="!selectedItems.includes(item)"
+              >
+                <table>
+                  <tr>
+                    <td>
+                      <input
+                        class="check__item"
+                        type="checkbox"
+                        [checked]="selectedItems.includes(item)"
+                        (change)="toggleSelected(item)"
+                      />
+                    </td>
+                    <td>Asamblea</td>
+                    <td>19/07/23</td>
+                    <td>{{100 | currency : "S/."}}</td>
+                    <td>
+                      <button
+                        class="btn-ver-detalle-deuda btn btn-primary"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"
+                      >
+                        <i class="fa-solid fa-eye"></i> detalle
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </label>
+            </div>
+          </div>
+
+          <div class="footer-deuda">
+            <table>
+              <tr>
+                <td colspan="2"><strong>Saldo de deuda:</strong></td>
+                <td>
+                  <strong>
+                    <span #elementos class="num-pay" data-val="0">
+                      {{selectedItems.length * 100| currency : "S/. "}}
+                    </span></strong
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- segunda Tabla -->
+        <div>
+          <h3>Deuda a Pagar</h3>
+          <div class="cabecera-deuda">
+            <table>
+              <tr>
+                <td><strong>Motivo</strong></td>
+                <td><strong>Fecha</strong></td>
+                <td><strong>Monto</strong></td>
+                <td><strong>Acción</strong></td>
+              </tr>
+            </table>
+          </div>
+          <div class="main-select-container" (change)="chxd($event)">
+            <div
+              *ngFor="let item of selectedItems"
+              class="item-deuda"
+              style="background-color: #fff;"
+            >
+              <table>
+                <tr>
+                  <td>Asamblea</td>
+                  <td>19/07/23</td>
+                  <td>S/. 100.00</td>
+                  <td>
+                    <!-- for="pay__item" -->
+                    <label role="button" class="pay__item_label" id="pay__item">
+                      <a
+                        role="button"
+                        (click)="fg($event)"
+                        (click)="toggleSelected(item)"
+                      >
+                        <i class="fa-solid fa-trash-alt"></i>Eliminar
+                      </a>
+                    </label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="footer-deuda">
+            <table>
+              <tr>
+                <td colspan="2"><strong>cobro pendiente:</strong></td>
+                <td>
+                  <strong
+                    ><span #elementos class="num-pay" data-val="0"
+                      >{{0 | currency : "S/. "}}</span
+                    ></strong
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Resumen y continuar -->
+        <div>
+          <h2> Resumen</h2>
+          
+          <div class="Sumary_container" (change)="chxd($event)">
+            <div class="sumary_title"><strong>Deuda Activa: </strong></div>
+            <div class="sumary_content"><span><i class="fa-solid fa-money-bills">  </i>  {{1263.54 | currency : 'S/. '}} Soles</span></div>
+            <br>
+            <div class="sumary_title"><strong>Saldo de deuda Activa: </strong></div>
+            <div class="sumary_content"><span><i class="fa-solid fa-money-bills">  </i>  {{1263.54 - 320| currency : 'S/. '}} Soles</span></div>
+            <br>
+            <div class="sumary_title"><strong>Cobro de deuda activa: </strong></div>
+            <div class="sumary_content"><span><i class="fa-solid fa-money-bills">  </i>  {{320 | currency : 'S/. '}} Soles</span></div>
+          </div>
+          <div class="next_button_container">
+            <app-button
+                  [btn_class]="'btn-success'"
+                  [icon_class]="'fa-arrow-right'"
+                  [buttonName]="'Siguiente (Realizar Cobro)'"
+                  
+                ></app-button>
+          </div>
+          
+        </div>
+      </div>
+      
+    </mat-step>
+    <mat-step label="Realiza el cobro">
+      <p>You're welcome.</p>
+
+      <button mat-button (click)="ShowServ()">Reset</button>
+    </mat-step>
+    <!-- Icon overrides. -->
+    <ng-template matStepperIcon="phone">
+      <!-- <mat-icon>call_end</mat-icon> -->
+    </ng-template>
+    <ng-template matStepperIcon="chat">
+      <!-- <mat-icon>forum</mat-icon> -->
+    </ng-template>
+  </mat-stepper>
+</div>
+
+<!-- Modal de detalles de deudas -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Detalle de deuda de:
+          <strong>nombre de deuda</strong>
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- cuerpo del modal -->
+        <div class="container text-center justify-content-center">
+          <!-- rows -->
+          <div class="row">
+            <div class="col mb-3">
+              <h2>Motivo:</h2>
+              <span>ASAMBLEA</span>
+              <!-- aqui debe ir el motivo de la deuda-->
+            </div>
+            <div class="col mb-3">
+              <h2>Mes:</h2>
+              <span>ENERO</span>
+            </div>
+            <div class="col mb-3">
+              <h2>Año:</h2>
+              <span>2023</span>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col mb-3">
+              <h2>Descripción:</h2>
+              <span>Falta a Asamblea el: 29/01/2023</span>
+            </div>
+            <div class="col mb-3">
+              <h2>Añadido el:</h2>
+              <span>29/01/2023</span>
+            </div>
+            <div class="col mb-3">
+              <h2>Monto Deuda:</h2>
+              <span>S/. 100.00</span>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col mb-3">
+              <h2>Modificado el:</h2>
+              <span>17/06/2023</span>
+            </div>
+            <div class="col mb-3">
+              <h2>Modificado por:</h2>
+              <span>Freed Lopez</span>
+            </div>
+          </div>
+          <!-- end rows -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">
+          Understood
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal detalles de deudas-->

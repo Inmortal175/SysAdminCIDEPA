@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { selectValues } from 'src/app/models/select-model';
 
@@ -15,7 +15,7 @@ import { selectValues } from 'src/app/models/select-model';
   ]
 })
 export class SelectComponent implements ControlValueAccessor {
-
+  @Input() label_field! : string
   private onChange!: Function;
   value = ""
 

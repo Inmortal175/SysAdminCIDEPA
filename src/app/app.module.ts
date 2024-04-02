@@ -16,11 +16,14 @@ import { SpinnerComponent } from './componentes/spinner/spinner.component';
 import { SelectComponent } from './componentes/select/select.component';
 import { ButtonComponent } from './componentes/button/button.component';
 import { SwitchButtonComponent } from './componentes/switch-button/switch-button.component';
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
-import { PaginatorModule } from 'primeng/paginator';
-import { DropdownModule } from 'primeng/dropdown';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material/angular-material.module';
+import { RegistroCalleComponent } from './pages/registro-calle/registro-calle.component';
+import { RegistroPredioComponent } from './pages/registro-predio/registro-predio.component';
+import { DeudasComponent } from './pages/deudas/deudas.component'
+import { SweetAlertdosModule } from './sweet-alertdos/sweet-alertdos.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CurrencyPipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,10 @@ import { DropdownModule } from 'primeng/dropdown';
     SpinnerComponent,
     SelectComponent,
     ButtonComponent,
-    SwitchButtonComponent
+    SwitchButtonComponent,
+    RegistroCalleComponent,
+    RegistroPredioComponent,
+    DeudasComponent
   ],
   imports: [
     BrowserModule,
@@ -40,17 +46,18 @@ import { DropdownModule } from 'primeng/dropdown';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    TableModule,
-    ButtonModule,
-    PaginatorModule,
-    DropdownModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule,
+    SweetAlertdosModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
-      multi : true
-    }
+      multi: true,
+
+    },
+    CurrencyPipe,
   ],
   bootstrap: [AppComponent]
 })

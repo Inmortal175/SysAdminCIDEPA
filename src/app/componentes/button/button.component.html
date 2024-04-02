@@ -1,6 +1,6 @@
 <div class="container">
   <button
-    class="button primary-button"
+    [class]="'button primary-button ' + addClass"
     [class.primary-button]="btn_class == 'btn-primary'"
     [class.success-button]="btn_class == 'btn-success'"
     [class.warning-button]="btn_class == 'btn-warning'"

@@ -4,6 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RegistroPropietarioComponent } from './pages/registro-propietario/registro-propietario.component';
 import { PanelComponent } from './pages/panel/panel.component';
+import { RegistroCalleComponent } from './pages/registro-calle/registro-calle.component';
+import { RegistroPredioComponent } from './pages/registro-predio/registro-predio.component';
+import { DeudasComponent } from './pages/deudas/deudas.component';
 
 const routes: Routes = [
   {
@@ -21,13 +24,25 @@ const routes: Routes = [
     children :
       [
         {
+          path: '',
+          component: PanelComponent
+        },
+        {
           path: 'registro/propietario',
           component: RegistroPropietarioComponent
         },
         {
-          path: '',
-          component: PanelComponent
-        }
+          path: 'registro/calle',
+          component : RegistroCalleComponent
+        },
+        {
+          path: 'registro/predio',
+          component : RegistroPredioComponent
+        },
+        {
+          path: 'predio/deudas',
+          component : DeudasComponent
+        },
       ]
   },
 ];

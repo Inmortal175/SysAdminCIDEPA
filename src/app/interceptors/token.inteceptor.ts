@@ -9,6 +9,7 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log("intercept init")
     const token = localStorage.getItem('token');
     const tokenExpiration = localStorage.getItem('refresh');
 

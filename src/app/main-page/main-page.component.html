@@ -57,60 +57,113 @@
           <a
             [routerLink]="['/main']"
             class="nav-link active-link"
-            (click)="ItemVisit(1)"
+            (click)="ItemVisit(1, 1)"
             ><i class="fa-solid fa-chart-line"></i><span class="">Panel</span
             ><span class="marcador m-activo"></span
           ></a>
         </li>
         <li class="item">
-          <a class="nav-link" (click)="ItemVisit(2)">
-            <i class="fa-solid fa-house-user"></i
-            ><span class="">Registro de predios</span
+          <a
+            [routerLink]="['predio/deudas']"
+            class="nav-link"
+            (click)="ItemVisit(1, 2)"
+            ><i class="fa-solid fa-funnel-dollar"></i
+            ><span>Mód.de deudas y cobro</span><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 3)"
+            ><i class="fa-solid fa-cash-register"></i><span>Módulo de caja</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 4)"
+            ><i class="fa-solid fa-clipboard-list"></i
+            ><span>Módulo de padrones</span><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 5)"
+            ><i class="fa-solid fa-check"></i><span>Módulo de asistencia</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 6)"
+            ><i class="fa-solid fa-user-plus"></i><span>Módulo de usuarios</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 7)">
+            <i class="fa-solid fa-file-alt"></i
+            ><span class="">Módulo de reportes</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+      </ul>
+      <!-- separador de resgitros y modulos -->
+      <div class="separator">
+        <span class="registro__sep"> REGISTROS </span>
+        <hr />
+      </div>
+      <!-- separador de resgitros y modulos -->
+      <ul class="items">
+        <li class="item">
+          <a
+            [routerLink]="['registro/propietario']"
+            class="nav-link"
+            (click)="ItemVisit(2, 1)"
+            ><i class="fa-solid fa-users"></i
+            ><span class="">Reg. de propietarios</span
             ><span class="marcador"></span
           ></a>
         </li>
         <li class="item">
           <a
-            [routerLink]="['registro/propietario']"
+            [routerLink]="['registro/calle']"
             class="nav-link"
-            (click)="ItemVisit(3)"
-            ><i class="fa-solid fa-users"></i><span class="">Usuarios</span
-            ><span class="marcador"></span
-          ></a>
-        </li>
-        <li class="item">
-          <a class="nav-link" (click)="ItemVisit(4)"
+            (click)="ItemVisit(2, 2)"
             ><i class="fa-solid fa-street-view"></i
             ><span class="">Registro de calles</span
             ><span class="marcador"></span
           ></a>
         </li>
         <li class="item">
-          <a class="nav-link" (click)="ItemVisit(5)"
-            ><i class="fa-solid fa-circle-info"></i><span class="">Deudas</span
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(2, 3)"
+            ><i class="fa-solid fa-map-marker-alt"></i
+            ><span class="">Reg. de lotes y manzanas</span
             ><span class="marcador"></span
           ></a>
         </li>
         <li class="item">
-          <a class="nav-link" (click)="ItemVisit(6)"
-            ><i class="fa-solid fa-comments-dollar"></i
-            ><span class="">Pagos</span><span class="marcador"></span
-          ></a>
-        </li>
-        <li class="item">
-          <a class="nav-link" (click)="ItemVisit(7)"
-            ><i class="fa-solid fa-list-check"></i
-            ><span class="">Registro de Asistencia</span
+          <a class="nav-link" (click)="ItemVisit(2, 4)"
+            ><i class="fa-solid fa-map-marked-alt"></i
+            ><span class="">Registro de sectores</span
             ><span class="marcador"></span
           ></a>
         </li>
         <li class="item">
-          <a class="nav-link" (click)="ItemVisit(8)"
-            ><i class="fa-solid fa-cash-register"></i><span class="">Caja</span
+          <a
+            [routerLink]="['registro/predio']"
+            class="nav-link"
+            (click)="ItemVisit(2, 5)"
+            ><i class="fa-solid fa-house-user"></i
+            ><span class="">Registro de predios</span
+            ><span class="marcador"></span
+          ></a>
+        </li>
+        <li class="item">
+          <a class="nav-link" (click)="ItemVisit(2, 6)"
+            ><i class="fa-solid fa-list-alt"></i
+            ><span class="">Reg. de Cat. de deudas</span
             ><span class="marcador"></span
           ></a>
         </li>
       </ul>
+    </div>
+    <div class="user__sesion">
       <ul class="user-items">
         <li class="user-item">
           <a class="user-link"

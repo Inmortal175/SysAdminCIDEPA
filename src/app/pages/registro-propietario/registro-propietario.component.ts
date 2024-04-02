@@ -3,13 +3,16 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth/auth.service';
 // import { Table } from 'primeng/table';
+import {AfterViewInit, ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-registro-propietario',
   templateUrl: './registro-propietario.component.html',
   styleUrls: ['./registro-propietario.component.css']
 })
-export class RegistroPropietarioComponent {
+export class RegistroPropietarioComponent implements AfterViewInit{
   Comuneros: Comunero[] = [
     {
       id: 1,
@@ -39,15 +42,56 @@ export class RegistroPropietarioComponent {
       dni: "77712434",
       celular:""
     },
+    {
+      id: 5,
+      surname: "Figueroa Perez",
+      name: "Franklin",
+      dni: "77712434",
+      celular:""
+    },
+    {
+      id: 6,
+      surname: "Figueroa Perez",
+      name: "Franklin",
+      dni: "77712434",
+      celular:""
+    },
+    {
+      id: 7,
+      surname: "Figueroa Perez",
+      name: "Franklin",
+      dni: "77712434",
+      celular:""
+    },
+    {
+      id: 8,
+      surname: "Figueroa Perez",
+      name: "Franklin",
+      dni: "77712434",
+      celular:"987346587"
+    },
+    {
+      id: 9,
+      surname: "Figueroa Perez",
+      name: "Franklin",
+      dni: "77712434",
+      celular:""
+    },
+    {
+      id: 10,
+      surname: "Figueroa Perez",
+      name: "Franklin",
+      dni: "77712434",
+      celular:"945638322"
+    },
   ];
 
+  //datos para la tabla
+  displayedColumns: string[] = ['id', 'surname',  'name', 'dni', 'celular', 'acciones'];
+  dataSource = new MatTableDataSource<Comunero>(this.Comuneros)
+  @ViewChild(MatPaginator) paginador!: MatPaginator;
+
     loading: boolean = true;
-
-  activityValues: number[] = [0, 100];
-
-  first = 0;
-
-  rows = 10;
 
   selectedFile!: File;
 
@@ -83,28 +127,12 @@ export class RegistroPropietarioComponent {
       );
   }
 
-  next() {
-        this.first = this.first + this.rows;
-    }
-
-    prev() {
-        this.first = this.first - this.rows;
-    }
-
-    reset() {
-        this.first = 0;
-    }
-
-    isLastPage(): boolean {
-        return this.Comuneros ? this.first === this.Comuneros.length - this.rows : true;
-    }
-
-    isFirstPage(): boolean {
-        return this.Comuneros ? this.first === 0 : true;
-    }
-
-  show(text: any) {
-    this.PROPIETARIO = this.Comuneros.filter((com) =>{ return com.id == text})[0]
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginador
   }
 
+  showDetail(dato: any) {
+    const datoEl = this.Comuneros.filter(x => x.id == dato)
+    console.log(datoEl)
+  }
 }

@@ -1,29 +1,41 @@
 <div class="main">
-  <h2>Registro de Usuario</h2>
+  <h2>Registro de Predio</h2>
   <form>
     <div class="row align-items">
       <div class="col-md-4 mt-3">
-        <app-input [label_field]="'Apellidos'"></app-input>
+        <app-select [label_field]="'Sector'"></app-select>
       </div>
       <div class="col-md-4 mt-3">
-        <app-input [label_field]="'Nombres'"></app-input>
+        <app-select [label_field]="'Manzana'"></app-select>
       </div>
       <div class="col mt-3">
-        <app-input [label_field]="'DNI'"></app-input>
+        <app-select [label_field]="'Lote'"></app-select>
+      </div>
+    </div>
+    <div class="row align-items">
+      <div class="col-md-4 mt-3">
+        <app-select [label_field]="'Departamento'"></app-select>
+      </div>
+      <div class="col-md-4 mt-3">
+        <app-select [label_field]="'Provincia'"></app-select>
+      </div>
+      <div class="col mt-3">
+        <app-select [label_field]="'Distrito'"></app-select>
       </div>
     </div>
     <div class="row mt-3">
       <div class="col-md-4">
-        <app-input [label_field]="'Celular (opcional)'"></app-input>
+        <app-select [label_field]="'Calle'"></app-select>
       </div>
-      <div class="col align-self-center">
+      <div class="col-md-3">
+        <app-select [label_field]="'Propietario'"></app-select>
+      </div>
+      <div class="col align-self-center btn-container">
         <app-button
           [btn_class]="'btn-primary'"
           [icon_class]="'fa-save'"
           [buttonName]="'Guardar propietario'"
         ></app-button>
-      </div>
-      <div class="col align-self-center">
         <app-button
           [btn_class]="'btn-danger'"
           [icon_class]="'fa-trash'"
@@ -45,27 +57,35 @@
             <td mat-cell *matCellDef="let element">{{element.id}}</td>
           </ng-container>
           <!-- surname Column -->
-          <ng-container matColumnDef="surname">
-            <th mat-header-cell *matHeaderCellDef>Apellidos</th>
-            <td mat-cell *matCellDef="let element">{{element.surname}}</td>
+          <ng-container matColumnDef="sector">
+            <th mat-header-cell *matHeaderCellDef>Sector</th>
+            <td mat-cell *matCellDef="let element">{{element.sector}}</td>
           </ng-container>
           <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Nombres</th>
-            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+          <ng-container matColumnDef="calle">
+            <th mat-header-cell *matHeaderCellDef>Calle</th>
+            <td mat-cell *matCellDef="let element">{{element.calle}}</td>
           </ng-container>
 
           <!-- Weight Column -->
-          <ng-container matColumnDef="dni">
-            <th mat-header-cell *matHeaderCellDef>DNI</th>
-            <td mat-cell *matCellDef="let element">{{element.dni}}</td>
+          <ng-container matColumnDef="manzana">
+            <th mat-header-cell *matHeaderCellDef>Manzana</th>
+            <td mat-cell *matCellDef="let element">{{element.manzana}}</td>
           </ng-container>
 
           <!-- Symbol Column -->
-          <ng-container matColumnDef="celular">
-            <th mat-header-cell *matHeaderCellDef>Celular</th>
+          <ng-container matColumnDef="lote">
+            <th mat-header-cell *matHeaderCellDef>Lote</th>
             <td mat-cell *matCellDef="let element">
-              {{element.celular == "" ? "(sin contacto)" : element.celular}}
+              {{ element.lote}}
+            </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="comunero">
+            <th mat-header-cell *matHeaderCellDef>Propietario</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.comunero}}
             </td>
           </ng-container>
 

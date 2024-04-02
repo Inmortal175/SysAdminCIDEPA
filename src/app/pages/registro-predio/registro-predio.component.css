@@ -1,24 +1,26 @@
-div.main{
+div.main {
   background-color: white;
   border-top: #0073aa solid 4px;
   margin: 22px;
   padding: 12px;
   border-radius: 4px;
 }
-table{
+
+.select-row:hover {
+  background-color: rgba(245, 245, 220, 0.203) !important;
+}
+
+table {
   width: 100%;
 }
-.btn-container{
+
+.btn-container {
   display: flex;
   justify-content: space-evenly;
 }
 
-.mdc-data-table__header-cell{
+.mdc-data-table__header-cell {
   background-color: #0073aa !important;
   color: white;
   align-self: center;
-}
-
-.select-row:hover{
-  background-color: rgba(245, 245, 220, 0.203) !important;
 }
