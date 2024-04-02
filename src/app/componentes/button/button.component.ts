@@ -16,8 +16,8 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 export class ButtonComponent implements ControlValueAccessor {
   @Input() btn_class = 'btn-warning';
   @Input() icon_class = 'fa-user-alt';
-  @Input() buttonName: string = 'Custom Buttom';
-  @Input() addClass: string = '';
+  @Input() buttonName = 'Custom Buttom';
+  @Input() addClass = '';
 
   registerOnChange(fn: any): void {}
 

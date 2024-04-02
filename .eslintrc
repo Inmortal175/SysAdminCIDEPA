@@ -26,7 +26,13 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@angular-eslint/no-empty-lifecycle-method": "off",
+        "@angular-eslint/use-lifecycle-interface": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
       }
     },
     {

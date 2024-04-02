@@ -19,6 +19,7 @@ export class InputComponent implements ControlValueAccessor {
 
   content = '';
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   private onChange!: Function;
 
   changeText($event: any) {

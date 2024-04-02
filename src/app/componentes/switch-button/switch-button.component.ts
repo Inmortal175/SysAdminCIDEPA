@@ -14,7 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class SwitchButtonComponent implements ControlValueAccessor {
-  contenido: boolean = true;
+  contenido = true;
   onChange: any = () => {};
   onTouch: any = () => {};
 

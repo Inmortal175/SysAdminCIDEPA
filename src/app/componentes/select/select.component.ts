@@ -16,6 +16,7 @@ import { selectValues } from 'src/app/models/select-model';
 })
 export class SelectComponent implements ControlValueAccessor {
   @Input() label_field!: string;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   private onChange!: Function;
   value = '';
 

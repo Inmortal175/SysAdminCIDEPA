@@ -114,7 +114,7 @@ export class MainPageComponent implements AfterViewInit, OnInit {
           for (let j = 0; j < MENU.children[i].children.length; j++) {
             MENU.children[i].children[j].children[0].children[1].className = 'show';
             // condicion para que el tooltip elimine cuando se expanda el menu
-            let LI_item = MENU.children[i].children[j];
+            const LI_item = MENU.children[i].children[j];
             if (i == 0) {
               RENDER.removeAttribute(LI_item, 'data-bs-toggle');
               RENDER.removeAttribute(LI_item, 'data-bs-placement');
@@ -136,7 +136,7 @@ export class MainPageComponent implements AfterViewInit, OnInit {
           for (let j = 0; j < MENU.children[i].children.length; j++) {
             MENU.children[i].children[j].children[0].children[1].className = 'hide';
             // condicion para que el tooltip se apñique cuando esté contraido
-            let LI_item = MENU.children[i].children[j];
+            const LI_item = MENU.children[i].children[j];
             if (i == 0) {
               RENDER.setAttribute(LI_item, 'data-bs-toggle', 'tooltip');
               RENDER.setAttribute(LI_item, 'data-bs-placement', 'right');

@@ -153,13 +153,13 @@ export class DeudasComponent implements OnInit {
   }
 
   efecto_contador(displaysData: QueryList<ElementRef>) {
-    let intervalo = 1500;
+    const intervalo = 1500;
     displaysData.forEach((elemento) => {
       const elemento_span = elemento.nativeElement as HTMLSpanElement;
       let starValue = parseFloat(elemento_span.getAttribute('data-val')!);
-      let endValue = this.selectedItems.length * 100;
-      let duracion = starValue > endValue ? Math.floor(intervalo / starValue) : Math.floor(intervalo / endValue);
-      let contador = setInterval(() => {
+      const endValue = this.selectedItems.length * 100;
+      const duracion = starValue > endValue ? Math.floor(intervalo / starValue) : Math.floor(intervalo / endValue);
+      const contador = setInterval(() => {
         if (starValue > endValue) {
           starValue -= 1;
         } else {
@@ -193,9 +193,9 @@ export class DeudasComponent implements OnInit {
 
   PredioSelected(dato: any) {
     const propiedad = this.predios.filter((x) => x.id == dato);
-    let manzana = `Manzana: <span style= 'font-weight: lighter;'>${propiedad[0].manzana}</span> `;
-    let lote = `Lote: <span style= 'font-weight: lighter;'>${propiedad[0].lote}</span>`;
-    let propietario = `Propietario: <span style= 'font-weight: lighter;'>${propiedad[0].comunero}</span>`;
+    const manzana = `Manzana: <span style= 'font-weight: lighter;'>${propiedad[0].manzana}</span> `;
+    const lote = `Lote: <span style= 'font-weight: lighter;'>${propiedad[0].lote}</span>`;
+    const propietario = `Propietario: <span style= 'font-weight: lighter;'>${propiedad[0].comunero}</span>`;
     Swal.fire({
       title: "<h1 style='color: red'>¿Seguro que desea seleccionar el Predio?</h1> <div> " + manzana + lote + '</div> ' + propietario,
       showCancelButton: true,
@@ -221,7 +221,7 @@ export class DeudasComponent implements OnInit {
         });
         this.stepper.next();
       } else {
-        let Toast = Swal.mixin({
+        const Toast = Swal.mixin({
           timer: 3000,
           position: 'bottom-end',
           toast: true,
@@ -283,7 +283,7 @@ export class DeudasComponent implements OnInit {
       this.selectedItems = this.selectedItems.filter((selectedItem) => selectedItem !== item);
       // this.selected.removeAt(this.selectedItems.indexOf(item));
       this.selectionForm.value.selected.splice(this.selectedItems.indexOf(item));
-      let orr = this.selectionForm;
+      const orr = this.selectionForm;
       console.log(orr.valid);
     } else {
       this.selectedItems.push(item);

@@ -1,11 +1,11 @@
 <div class="container">
   <button
     [class]="'button primary-button ' + addClass"
-    [class.primary-button]="btn_class == 'btn-primary'"
-    [class.success-button]="btn_class == 'btn-success'"
-    [class.warning-button]="btn_class == 'btn-warning'"
-    [class.info-button]="btn_class == 'btn-info'"
-    [class.danger-button]="btn_class == 'btn-danger'">
+    [class.primary-button]="btn_class === 'btn-primary'"
+    [class.success-button]="btn_class === 'btn-success'"
+    [class.warning-button]="btn_class === 'btn-warning'"
+    [class.info-button]="btn_class === 'btn-info'"
+    [class.danger-button]="btn_class === 'btn-danger'">
     <i [class]="'fa-solid ' + icon_class"></i>
     &nbsp; {{ buttonName }}
   </button>

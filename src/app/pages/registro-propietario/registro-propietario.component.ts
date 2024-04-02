@@ -91,7 +91,7 @@ export class RegistroPropietarioComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<Comunero>(this.Comuneros);
   @ViewChild(MatPaginator) paginador!: MatPaginator;
 
-  loading: boolean = true;
+  loading = true;
 
   selectedFile!: File;
 
