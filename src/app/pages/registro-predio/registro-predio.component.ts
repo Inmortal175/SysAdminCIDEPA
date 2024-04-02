@@ -6,9 +6,9 @@ import { Predio } from 'src/app/models/predio';
 @Component({
   selector: 'app-registro-predio',
   templateUrl: './registro-predio.component.html',
-  styleUrls: ['./registro-predio.component.css']
+  styleUrls: ['./registro-predio.component.css'],
 })
-export class RegistroPredioComponent implements AfterViewInit{
+export class RegistroPredioComponent implements AfterViewInit {
   predios: Predio[] = [
     {
       id: 1,
@@ -24,7 +24,7 @@ export class RegistroPredioComponent implements AfterViewInit{
       created_at: '',
       last_modified: '',
       modified_by: '',
-      es_eliminado: false
+      es_eliminado: false,
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ export class RegistroPredioComponent implements AfterViewInit{
       created_at: '',
       last_modified: '',
       modified_by: '',
-      es_eliminado: false
+      es_eliminado: false,
     },
     {
       id: 3,
@@ -56,7 +56,7 @@ export class RegistroPredioComponent implements AfterViewInit{
       created_at: '',
       last_modified: '',
       modified_by: '',
-      es_eliminado: false
+      es_eliminado: false,
     },
     {
       id: 4,
@@ -72,7 +72,7 @@ export class RegistroPredioComponent implements AfterViewInit{
       created_at: '',
       last_modified: '',
       modified_by: '',
-      es_eliminado: false
+      es_eliminado: false,
     },
     {
       id: 5,
@@ -88,18 +88,16 @@ export class RegistroPredioComponent implements AfterViewInit{
       created_at: '',
       last_modified: '',
       modified_by: '',
-      es_eliminado: false
+      es_eliminado: false,
     },
-  ]
-  displayedColumns: string[] = ['id', 'sector', 'calle', 'manzana', 'lote', 'comunero', 'acciones']
-  dataSource = new MatTableDataSource<Predio>(this.predios)
+  ];
+  displayedColumns: string[] = ['id', 'sector', 'calle', 'manzana', 'lote', 'comunero', 'acciones'];
+  dataSource = new MatTableDataSource<Predio>(this.predios);
   @ViewChild(MatPaginator) paginador!: MatPaginator;
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginador;
   }
 
-  showDetail(dato:any) {
-
-  }
+  showDetail(dato: any) {}
 }

@@ -9,32 +9,29 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: InputComponent
-    }
-  ]
+      useExisting: InputComponent,
+    },
+  ],
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() type!: string;
-  @Input() label_field!: string
+  @Input() label_field!: string;
 
-  content = ''
+  content = '';
 
   private onChange!: Function;
 
-  changeText($event:any) {
-    this.onChange($event.target.value)
+  changeText($event: any) {
+    this.onChange($event.target.value);
   }
 
   registerOnChange(fn: any): void {
-    this.onChange = fn
+    this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
-
-  }
+  registerOnTouched(fn: any): void {}
 
   writeValue(value: string): void {
-    this.content = value
+    this.content = value;
   }
-
 }

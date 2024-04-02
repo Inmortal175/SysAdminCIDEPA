@@ -1,15 +1,15 @@
-div{
+div {
   display: inline-flex;
   align-items: center;
   gap: 16px;
   justify-content: space-between;
   width: 100%;
 }
-label{
+label {
   cursor: pointer;
 }
 
-input.icono{
+input.icono {
   display: none;
 }
 
@@ -29,7 +29,7 @@ div label.label-icono:before {
   top: 50%;
   left: 2px;
   transform: translateY(-50%);
-  content: "";
+  content: '';
   display: block;
   width: 20px;
   height: 20px;
@@ -38,10 +38,10 @@ div label.label-icono:before {
   transition: left 300ms linear;
 }
 
-div input.icono:checked+label.label-icono {
+div input.icono:checked + label.label-icono {
   background: #0073aa;
 }
 
-div input.icono:checked+label.label-icono:before {
+div input.icono:checked + label.label-icono:before {
   left: 23px;
 }

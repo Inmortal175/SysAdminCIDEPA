@@ -12,43 +12,42 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'main',
     component: MainPageComponent,
-    children :
-      [
-        {
-          path: '',
-          component: PanelComponent
-        },
-        {
-          path: 'registro/propietario',
-          component: RegistroPropietarioComponent
-        },
-        {
-          path: 'registro/calle',
-          component : RegistroCalleComponent
-        },
-        {
-          path: 'registro/predio',
-          component : RegistroPredioComponent
-        },
-        {
-          path: 'predio/deudas',
-          component : DeudasComponent
-        },
-      ]
+    children: [
+      {
+        path: '',
+        component: PanelComponent,
+      },
+      {
+        path: 'registro/propietario',
+        component: RegistroPropietarioComponent,
+      },
+      {
+        path: 'registro/calle',
+        component: RegistroCalleComponent,
+      },
+      {
+        path: 'registro/predio',
+        component: RegistroPredioComponent,
+      },
+      {
+        path: 'predio/deudas',
+        component: DeudasComponent,
+      },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

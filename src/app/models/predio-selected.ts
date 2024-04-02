@@ -1,4 +1,4 @@
-export interface PredioSelected{
+export interface PredioSelected {
   propietario: string;
   manzana: string;
   lote: string;

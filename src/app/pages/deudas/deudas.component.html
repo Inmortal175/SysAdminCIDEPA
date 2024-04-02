@@ -1,20 +1,9 @@
 <div class="main">
   <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+    {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
   </button>
-  <mat-stepper
-    orientation="horizontal"
-    [linear]="isLinear"
-    #stepper
-    [animationDuration]="'500'"
-  >
-    <mat-step
-      label="Seleccione un predio"
-      state="chat"
-      [stepControl]="firstFormGroup"
-      [completed]="true"
-      [editable]="false"
-    >
+  <mat-stepper orientation="horizontal" [linear]="isLinear" #stepper [animationDuration]="'500'">
+    <mat-step label="Seleccione un predio" state="chat" [stepControl]="firstFormGroup" [completed]="true" [editable]="false">
       <!-- listado de predios -->
 
       <div class="row">
@@ -25,30 +14,30 @@
               <!-- Position Column -->
               <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef>No.</th>
-                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                <td mat-cell *matCellDef="let element">{{ element.id }}</td>
               </ng-container>
               <!-- surname Column -->
               <ng-container matColumnDef="sector">
                 <th mat-header-cell *matHeaderCellDef>Sector</th>
-                <td mat-cell *matCellDef="let element">{{element.sector}}</td>
+                <td mat-cell *matCellDef="let element">{{ element.sector }}</td>
               </ng-container>
               <!-- Name Column -->
               <ng-container matColumnDef="calle">
                 <th mat-header-cell *matHeaderCellDef>Calle</th>
-                <td mat-cell *matCellDef="let element">{{element.calle}}</td>
+                <td mat-cell *matCellDef="let element">{{ element.calle }}</td>
               </ng-container>
 
               <!-- Weight Column -->
               <ng-container matColumnDef="manzana">
                 <th mat-header-cell *matHeaderCellDef>Manzana</th>
-                <td mat-cell *matCellDef="let element">{{element.manzana}}</td>
+                <td mat-cell *matCellDef="let element">{{ element.manzana }}</td>
               </ng-container>
 
               <!-- Symbol Column -->
               <ng-container matColumnDef="lote">
                 <th mat-header-cell *matHeaderCellDef>Lote</th>
                 <td mat-cell *matCellDef="let element">
-                  {{ element.lote}}
+                  {{ element.lote }}
                 </td>
               </ng-container>
 
@@ -56,7 +45,7 @@
               <ng-container matColumnDef="comunero">
                 <th mat-header-cell *matHeaderCellDef>Propietario</th>
                 <td mat-cell *matCellDef="let element">
-                  {{ element.comunero}}
+                  {{ element.comunero }}
                 </td>
               </ng-container>
 
@@ -69,43 +58,29 @@
                       [buttonName]="'Seleecionar este predio'"
                       [icon_class]="'fa-check'"
                       [btn_class]="'btn-success'"
-                      (click)="PredioSelected(botonEl.id)"
-                    ></app-button>
+                      (click)="PredioSelected(botonEl.id)"></app-button>
                   </div>
                 </td>
               </ng-container>
-              <tr
-                mat-row
-                *matRowDef="let row; columns: displayedColumns;"
-                class="select-row"
-              ></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns" class="select-row"></tr>
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
             </table>
-            <mat-paginator
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page"
-              showFirstLastButtons
-            >
-            </mat-paginator>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" showFirstLastButtons></mat-paginator>
           </div>
           <!-- end table -->
         </div>
       </div>
     </mat-step>
-    <mat-step
-      [stepControl]="selectionForm"
-      label="Seleciona las deudas"
-      state="chat"
-      [editable]="false"
-    >
+    <mat-step [stepControl]="selectionForm" label="Seleciona las deudas" state="chat" [editable]="false">
       <!-- selecion de deudas -->
       <table class="table table-borderless">
         <tbody>
           <tr>
             <td colspan="2">
               <div class="title-prop">
-                <i class="fa-solid fa-user"></i> Señor (a):
+                <i class="fa-solid fa-user"></i>
+                Señor (a):
               </div>
               <span>&nbsp;</span>
               <div class="text-prop">Figueroa Perez Franklin (propietario)</div>
@@ -114,15 +89,21 @@
           <tr>
             <td>
               <div class="title-prop">
-                <i class="fa-solid fa-home"></i> Vivienda:
+                <i class="fa-solid fa-home"></i>
+                Vivienda:
               </div>
               <div class="text-prop">
-                Jr. Las Flores <strong>Mz.</strong> "F" <strong>Lt.</strong> 03
+                Jr. Las Flores
+                <strong>Mz.</strong>
+                "F"
+                <strong>Lt.</strong>
+                03
               </div>
             </td>
             <td>
               <div class="title-prop">
-                <i class="fa-solid fa-clipboard-list"></i> Padrón:
+                <i class="fa-solid fa-clipboard-list"></i>
+                Padrón:
               </div>
               <div class="text-prop" *ngIf="false">
                 <i class="fa-solid fa-circle padron-active"></i>
@@ -132,19 +113,11 @@
               <div class="text-prop" *ngIf="true">
                 <i class="fa-solid fa-circle padron-inactive"></i>
                 Inactivo
-                <i
-                  class="fa-solid fa-triangle-exclamation"
-                  style="color: orange;"
-                ></i>
+                <i class="fa-solid fa-triangle-exclamation" style="color: orange"></i>
               </div>
               <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <i
-                class="fa-solid fa-circle-exclamation fa-xl fa-beat-fade"
-                style="color: #007bb8; cursor: pointer;"
-                (click)="showInfoPadron()"
-              >
-              </i>
-              <span style="color: rgb(150, 150, 150);"> info.</span>
+              <i class="fa-solid fa-circle-exclamation fa-xl fa-beat-fade" style="color: #007bb8; cursor: pointer" (click)="showInfoPadron()"></i>
+              <span style="color: rgb(150, 150, 150)">info.</span>
             </td>
           </tr>
           <tr *ngIf="true">
@@ -154,8 +127,7 @@
                   [btn_class]="'btn-primary'"
                   [icon_class]="'fa-clipboard-list fa-beat-fade'"
                   [buttonName]="'¡Empadronar Ahora!'"
-                  [addClass]="'fa-fade'"
-                ></app-button>
+                  [addClass]="'fa-fade'"></app-button>
               </div>
             </td>
           </tr>
@@ -181,29 +153,19 @@
                 class="item-deuda-text"
                 role="button"
                 [class.hide-item-deuda]="selectedItems.includes(item)"
-                [class.show-item-deuda]="!selectedItems.includes(item)"
-              >
+                [class.show-item-deuda]="!selectedItems.includes(item)">
                 <table>
                   <tr>
                     <td>
-                      <input
-                        class="check__item"
-                        type="checkbox"
-                        [checked]="selectedItems.includes(item)"
-                        (change)="toggleSelected(item)"
-                      />
+                      <input class="check__item" type="checkbox" [checked]="selectedItems.includes(item)" (change)="toggleSelected(item)" />
                     </td>
                     <td>Asamblea</td>
                     <td>19/07/23</td>
-                    <td>{{100 | currency : "S/."}}</td>
+                    <td>{{ 100 | currency: 'S/.' }}</td>
                     <td>
-                      <button
-                        class="btn-ver-detalle-deuda btn btn-primary"
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop"
-                      >
-                        <i class="fa-solid fa-eye"></i> detalle
+                      <button class="btn-ver-detalle-deuda btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="fa-solid fa-eye"></i>
+                        detalle
                       </button>
                     </td>
                   </tr>
@@ -219,9 +181,9 @@
                 <td>
                   <strong>
                     <span #elementos class="num-pay" data-val="0">
-                      {{selectedItems.length * 100| currency : "S/. "}}
-                    </span></strong
-                  >
+                      {{ selectedItems.length * 100 | currency: 'S/. ' }}
+                    </span>
+                  </strong>
                 </td>
               </tr>
             </table>
@@ -241,11 +203,7 @@
             </table>
           </div>
           <div class="main-select-container" (change)="chxd($event)">
-            <div
-              *ngFor="let item of selectedItems"
-              class="item-deuda"
-              style="background-color: #fff;"
-            >
+            <div *ngFor="let item of selectedItems" class="item-deuda" style="background-color: #fff">
               <table>
                 <tr>
                   <td>Asamblea</td>
@@ -254,12 +212,9 @@
                   <td>
                     <!-- for="pay__item" -->
                     <label role="button" class="pay__item_label" id="pay__item">
-                      <a
-                        role="button"
-                        (click)="fg($event)"
-                        (click)="toggleSelected(item)"
-                      >
-                        <i class="fa-solid fa-trash-alt"></i>Eliminar
+                      <a role="button" (click)="fg($event)" (click)="toggleSelected(item)">
+                        <i class="fa-solid fa-trash-alt"></i>
+                        Eliminar
                       </a>
                     </label>
                   </td>
@@ -272,11 +227,9 @@
               <tr>
                 <td colspan="2"><strong>cobro pendiente:</strong></td>
                 <td>
-                  <strong
-                    ><span #elementos class="num-pay" data-val="0"
-                      >{{0 | currency : "S/. "}}</span
-                    ></strong
-                  >
+                  <strong>
+                    <span #elementos class="num-pay" data-val="0">{{ 0 | currency: 'S/. ' }}</span>
+                  </strong>
                 </td>
               </tr>
             </table>
@@ -285,30 +238,38 @@
 
         <!-- Resumen y continuar -->
         <div>
-          <h2> Resumen</h2>
-          
+          <h2>Resumen</h2>
+
           <div class="Sumary_container" (change)="chxd($event)">
-            <div class="sumary_title"><strong>Deuda Activa: </strong></div>
-            <div class="sumary_content"><span><i class="fa-solid fa-money-bills">  </i>  {{1263.54 | currency : 'S/. '}} Soles</span></div>
-            <br>
-            <div class="sumary_title"><strong>Saldo de deuda Activa: </strong></div>
-            <div class="sumary_content"><span><i class="fa-solid fa-money-bills">  </i>  {{1263.54 - 320| currency : 'S/. '}} Soles</span></div>
-            <br>
-            <div class="sumary_title"><strong>Cobro de deuda activa: </strong></div>
-            <div class="sumary_content"><span><i class="fa-solid fa-money-bills">  </i>  {{320 | currency : 'S/. '}} Soles</span></div>
+            <div class="sumary_title"><strong>Deuda Activa:</strong></div>
+            <div class="sumary_content">
+              <span>
+                <i class="fa-solid fa-money-bills"></i>
+                {{ 1263.54 | currency: 'S/. ' }} Soles
+              </span>
+            </div>
+            <br />
+            <div class="sumary_title"><strong>Saldo de deuda Activa:</strong></div>
+            <div class="sumary_content">
+              <span>
+                <i class="fa-solid fa-money-bills"></i>
+                {{ 1263.54 - 320 | currency: 'S/. ' }} Soles
+              </span>
+            </div>
+            <br />
+            <div class="sumary_title"><strong>Cobro de deuda activa:</strong></div>
+            <div class="sumary_content">
+              <span>
+                <i class="fa-solid fa-money-bills"></i>
+                {{ 320 | currency: 'S/. ' }} Soles
+              </span>
+            </div>
           </div>
           <div class="next_button_container">
-            <app-button
-                  [btn_class]="'btn-success'"
-                  [icon_class]="'fa-arrow-right'"
-                  [buttonName]="'Siguiente (Realizar Cobro)'"
-                  
-                ></app-button>
+            <app-button [btn_class]="'btn-success'" [icon_class]="'fa-arrow-right'" [buttonName]="'Siguiente (Realizar Cobro)'"></app-button>
           </div>
-          
         </div>
       </div>
-      
     </mat-step>
     <mat-step label="Realiza el cobro">
       <p>You're welcome.</p>
@@ -333,8 +294,7 @@
   data-bs-keyboard="false"
   tabindex="-1"
   aria-labelledby="staticBackdropLabel"
-  aria-hidden="true"
->
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -342,12 +302,7 @@
           Detalle de deuda de:
           <strong>nombre de deuda</strong>
         </h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <!-- cuerpo del modal -->
@@ -398,12 +353,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">
-          Understood
-        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
   </div>

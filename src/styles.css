@@ -1,16 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
-*, ::after, ::before{
+*,
+::after,
+::before {
   box-sizing: content-box !important;
 }
-ul, ol, dl{
- margin-bottom: 0;
+ul,
+ol,
+dl {
+  margin-bottom: 0;
 }
-ol, ul{
+ol,
+ul {
   padding: 0;
 }
 
@@ -19,24 +24,24 @@ body {
 }
 
 :root {
-  --darkblue: #0F1730;
+  --darkblue: #0f1730;
   --lightcolor: rgb(247, 248, 251);
   --color-light: white;
-    --color-dark: #212121;
-    --color-signal: #fab700;
-    --color-background: var(--color-light);
-    --color-text: var(--color-dark);
-    --color-accent: var(--color-signal);
-    --size-bezel: .5rem;
-    --size-radius: 4px;
+  --color-dark: #212121;
+  --color-signal: #fab700;
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+  --size-bezel: 0.5rem;
+  --size-radius: 4px;
   --text-color-blue: #1a73e8;
-    line-height: 1.4;
-    font-family: "Inter", sans-serif;
-    font-size: calc(.6rem + .4vw);
-    color: var(--color-text);
-    font-weight: 300;
-    --color-texto-menu:  #1b2e37;
-    --color-primario: #0073aa
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+  font-size: calc(0.6rem + 0.4vw);
+  color: var(--color-text);
+  font-weight: 300;
+  --color-texto-menu: #1b2e37;
+  --color-primario: #0073aa;
 }
 /* Firefox */
 * {
@@ -52,20 +57,20 @@ body {
 
 *::-webkit-scrollbar-track {
   border-radius: 0px;
-  background-color: #DFE9EB;
+  background-color: #dfe9eb;
 }
 
 *::-webkit-scrollbar-track:hover {
-  background-color: #B8C0C2;
+  background-color: #b8c0c2;
 }
 
 *::-webkit-scrollbar-track:active {
-  background-color: #B8C0C2;
+  background-color: #b8c0c2;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 0px;
-  background-color: var(--darkblue)
+  background-color: var(--darkblue);
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -76,8 +81,14 @@ body {
   background-color: var(--darkblue);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
 div.mat-step-icon-state-done:host(.ng-tns-c42-0) {
   background-color: #09b961 !important;
 }

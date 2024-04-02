@@ -1,10 +1,4 @@
 <label class="input">
-  <input
-    class="input__field"
-    [type]="type"
-    placeholder=" "
-    [value]="content"
-    (input)="changeText($event)"
-  />
-  <span class="input__label">{{label_field}}</span>
+  <input class="input__field" [type]="type" placeholder=" " [value]="content" (input)="changeText($event)" />
+  <span class="input__label">{{ label_field }}</span>
 </label>

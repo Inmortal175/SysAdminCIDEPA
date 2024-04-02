@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
-import { ReactiveFormsModule } from '@angular/forms'
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { RegistroCalleComponent } from './pages/registro-calle/registro-calle.component';
 import { RegistroPredioComponent } from './pages/registro-predio/registro-predio.component';
-import { DeudasComponent } from './pages/deudas/deudas.component'
+import { DeudasComponent } from './pages/deudas/deudas.component';
 import { SweetAlertdosModule } from './sweet-alertdos/sweet-alertdos.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { CurrencyPipe } from '@angular/common';
@@ -38,7 +38,7 @@ import { CurrencyPipe } from '@angular/common';
     SwitchButtonComponent,
     RegistroCalleComponent,
     RegistroPredioComponent,
-    DeudasComponent
+    DeudasComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,10 +55,9 @@ import { CurrencyPipe } from '@angular/common';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true,
-
     },
     CurrencyPipe,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

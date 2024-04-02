@@ -1,4 +1,4 @@
-.container{
+.container {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,7 @@
   width: auto;
 }
 /* Estilos compartidos para todos los botones */
-.button{
+.button {
   background: transparent;
   color: dodgerblue;
   border-radius: 6px;
@@ -16,11 +16,11 @@
   font-size: 14px;
 }
 
-.button:hover{
+.button:hover {
   color: white;
   background: white;
 }
-.button:active{
+.button:active {
   filter: contrast(1.5);
 }
 /* Estilos para botón primario */
@@ -49,7 +49,7 @@
   border: 2px solid #ffc107;
   color: #ffc107;
 }
-.warning-button:hover{
+.warning-button:hover {
   background-color: #ffc107;
   color: black;
 }

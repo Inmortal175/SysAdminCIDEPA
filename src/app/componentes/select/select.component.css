@@ -1,9 +1,9 @@
-.select{
+.select {
   position: relative;
   display: flex;
 }
 
-.field__select{
+.field__select {
   width: 100%;
   padding: 13px 15px;
   height: 28px;
@@ -11,11 +11,11 @@
   border-radius: 4px;
 }
 
-.def-option{
+.def-option {
   cursor: not-allowed;
 }
 
-.select__label{
+.select__label {
   position: absolute;
   top: -4px;
   margin: 0 10px;
@@ -26,22 +26,21 @@
   font-weight: lighter;
 }
 
-
-.field__select:focus-visible{
+.field__select:focus-visible {
   outline: 2px solid var(--text-color-blue);
   border: none;
 }
 
-.field__select:focus{
+.field__select:focus {
   outline: 2px solid var(--text-color-blue);
   border: none;
 }
 
-.field__select:focus+.select__label{
+.field__select:focus + .select__label {
   color: var(--text-color-blue);
 }
 
-.option-active{
+.option-active {
   background-color: #0073aa;
   color: white;
   text-transform: uppercase;
