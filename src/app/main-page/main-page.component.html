@@ -15,10 +15,7 @@
         <div class="user-bar">
           <div #user_tag class="user-tag">
             <div class="user-profile">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp"
-                alt=""
-              />
+              <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp" alt="" />
             </div>
             <div class="username">
               <div class="name">FR33D</div>
@@ -30,18 +27,21 @@
             <ul class="profile-items">
               <li class="profile-item">
                 <a class="profile-link">
-                  <i class="fa-solid fa-user-edit"></i>Editar Perfil</a
-                >
+                  <i class="fa-solid fa-user-edit"></i>
+                  Editar Perfil
+                </a>
               </li>
               <li class="profile-item">
-                <a class="profile-link"
-                  ><i class="fa-solid fa-envelope"></i>Mensajes</a
-                >
+                <a class="profile-link">
+                  <i class="fa-solid fa-envelope"></i>
+                  Mensajes
+                </a>
               </li>
               <li class="profile-item">
-                <a class="profile-link"
-                  ><i class="fa-solid fa-power-off"></i>Cerrar Sesión</a
-                >
+                <a class="profile-link">
+                  <i class="fa-solid fa-power-off"></i>
+                  Cerrar Sesión
+                </a>
               </li>
             </ul>
           </div>
@@ -54,127 +54,118 @@
     <div #menu class="menu">
       <ul class="items">
         <li class="item">
-          <a
-            [routerLink]="['/main']"
-            class="nav-link active-link"
-            (click)="ItemVisit(1, 1)"
-            ><i class="fa-solid fa-chart-line"></i><span class="">Panel</span
-            ><span class="marcador m-activo"></span
-          ></a>
+          <a [routerLink]="['/main']" class="nav-link active-link" (click)="ItemVisit(1, 1)">
+            <i class="fa-solid fa-chart-line"></i>
+            <span class="">Panel</span>
+            <span class="marcador m-activo"></span>
+          </a>
         </li>
         <li class="item">
-          <a
-            [routerLink]="['predio/deudas']"
-            class="nav-link"
-            (click)="ItemVisit(1, 2)"
-            ><i class="fa-solid fa-funnel-dollar"></i
-            ><span>Mód.de deudas y cobro</span><span class="marcador"></span
-          ></a>
+          <a [routerLink]="['predio/deudas']" class="nav-link" (click)="ItemVisit(1, 2)">
+            <i class="fa-solid fa-funnel-dollar"></i>
+            <span>Mód.de deudas y cobro</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 3)"
-            ><i class="fa-solid fa-cash-register"></i><span>Módulo de caja</span
-            ><span class="marcador"></span
-          ></a>
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 3)">
+            <i class="fa-solid fa-cash-register"></i>
+            <span>Módulo de caja</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 4)"
-            ><i class="fa-solid fa-clipboard-list"></i
-            ><span>Módulo de padrones</span><span class="marcador"></span
-          ></a>
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 4)">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Módulo de padrones</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 5)"
-            ><i class="fa-solid fa-check"></i><span>Módulo de asistencia</span
-            ><span class="marcador"></span
-          ></a>
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 5)">
+            <i class="fa-solid fa-check"></i>
+            <span>Módulo de asistencia</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 6)"
-            ><i class="fa-solid fa-user-plus"></i><span>Módulo de usuarios</span
-            ><span class="marcador"></span
-          ></a>
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 6)">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Módulo de usuarios</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
           <a [routerLink]="" class="nav-link" (click)="ItemVisit(1, 7)">
-            <i class="fa-solid fa-file-alt"></i
-            ><span class="">Módulo de reportes</span
-            ><span class="marcador"></span
-          ></a>
+            <i class="fa-solid fa-file-alt"></i>
+            <span class="">Módulo de reportes</span>
+            <span class="marcador"></span>
+          </a>
         </li>
       </ul>
       <!-- separador de resgitros y modulos -->
       <div class="separator">
-        <span class="registro__sep"> REGISTROS </span>
+        <span class="registro__sep">REGISTROS</span>
         <hr />
       </div>
       <!-- separador de resgitros y modulos -->
       <ul class="items">
         <li class="item">
-          <a
-            [routerLink]="['registro/propietario']"
-            class="nav-link"
-            (click)="ItemVisit(2, 1)"
-            ><i class="fa-solid fa-users"></i
-            ><span class="">Reg. de propietarios</span
-            ><span class="marcador"></span
-          ></a>
+          <a [routerLink]="['registro/propietario']" class="nav-link" (click)="ItemVisit(2, 1)">
+            <i class="fa-solid fa-users"></i>
+            <span class="">Reg. de propietarios</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a
-            [routerLink]="['registro/calle']"
-            class="nav-link"
-            (click)="ItemVisit(2, 2)"
-            ><i class="fa-solid fa-street-view"></i
-            ><span class="">Registro de calles</span
-            ><span class="marcador"></span
-          ></a>
+          <a [routerLink]="['registro/calle']" class="nav-link" (click)="ItemVisit(2, 2)">
+            <i class="fa-solid fa-street-view"></i>
+            <span class="">Registro de calles</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a [routerLink]="" class="nav-link" (click)="ItemVisit(2, 3)"
-            ><i class="fa-solid fa-map-marker-alt"></i
-            ><span class="">Reg. de lotes y manzanas</span
-            ><span class="marcador"></span
-          ></a>
+          <a [routerLink]="" class="nav-link" (click)="ItemVisit(2, 3)">
+            <i class="fa-solid fa-map-marker-alt"></i>
+            <span class="">Reg. de lotes y manzanas</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a class="nav-link" (click)="ItemVisit(2, 4)"
-            ><i class="fa-solid fa-map-marked-alt"></i
-            ><span class="">Registro de sectores</span
-            ><span class="marcador"></span
-          ></a>
+          <a class="nav-link" (click)="ItemVisit(2, 4)">
+            <i class="fa-solid fa-map-marked-alt"></i>
+            <span class="">Registro de sectores</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a
-            [routerLink]="['registro/predio']"
-            class="nav-link"
-            (click)="ItemVisit(2, 5)"
-            ><i class="fa-solid fa-house-user"></i
-            ><span class="">Registro de predios</span
-            ><span class="marcador"></span
-          ></a>
+          <a [routerLink]="['registro/predio']" class="nav-link" (click)="ItemVisit(2, 5)">
+            <i class="fa-solid fa-house-user"></i>
+            <span class="">Registro de predios</span>
+            <span class="marcador"></span>
+          </a>
         </li>
         <li class="item">
-          <a class="nav-link" (click)="ItemVisit(2, 6)"
-            ><i class="fa-solid fa-list-alt"></i
-            ><span class="">Reg. de Cat. de deudas</span
-            ><span class="marcador"></span
-          ></a>
+          <a class="nav-link" (click)="ItemVisit(2, 6)">
+            <i class="fa-solid fa-list-alt"></i>
+            <span class="">Reg. de Cat. de deudas</span>
+            <span class="marcador"></span>
+          </a>
         </li>
       </ul>
     </div>
     <div class="user__sesion">
       <ul class="user-items">
         <li class="user-item">
-          <a class="user-link"
-            ><i class="fa-solid fa-user-pen"></i>
-            <span class="">Editar perfil</span
-            ><span class="marcador m-activo"></span
-          ></a>
+          <a class="user-link">
+            <i class="fa-solid fa-user-pen"></i>
+            <span class="">Editar perfil</span>
+            <span class="marcador m-activo"></span>
+          </a>
         </li>
         <li class="user-item">
-          <a class="user-link"
-            ><i class="fa-solid fa-power-off"></i>
+          <a class="user-link">
+            <i class="fa-solid fa-power-off"></i>
             <span class="">Cerrar Sesión</span>
           </a>
         </li>
@@ -183,12 +174,8 @@
   </div>
   <div class="cuerpo">
     <div class="main">
-      <router-outlet
-        ><app-spinner *ngIf="showSpinner"></app-spinner
-      ></router-outlet>
+      <router-outlet><app-spinner *ngIf="showSpinner"></app-spinner></router-outlet>
     </div>
-    <div #footer class="footer">
-      @copyright: Franklin Figueroa Perez - 2023
-    </div>
+    <div #footer class="footer">&#64;copyright: Franklin Figueroa Perez - 2023</div>
   </div>
 </div>

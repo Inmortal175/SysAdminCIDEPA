@@ -4,7 +4,6 @@
 
 .mat-mdc-form-field {
   margin-top: 16px;
-
 }
 
 div.main {
@@ -33,38 +32,39 @@ table {
   align-self: center;
 }
 
-div.mat-step-icon-state-done:host(.ng-tns-c42-0){
+div.mat-step-icon-state-done:host(.ng-tns-c42-0) {
   background-color: #09b961 !important;
 }
-.mat-step-header{
+.mat-step-header {
   background-color: #0073aa;
 }
 
 /*estados de padron*/
-.padron-active{
+.padron-active {
   color: rgb(11, 184, 20);
 }
-.padron-inactive{
+.padron-inactive {
   color: rgb(255, 0, 0);
 }
 /*datos propietario*/
-.title-prop{
+.title-prop {
   display: contents;
   font-size: 18px;
   font-weight: 500;
 }
-.text-prop{
+.text-prop {
   display: contents;
   font-size: 16px;
   font-weight: 400;
 }
 
 /*para select multiple*/
-.main-container-deudas{
+.main-container-deudas {
   display: flex;
   justify-content: space-evenly;
 }
-.main-select-container, .Sumary_container{
+.main-select-container,
+.Sumary_container {
   width: 400px;
   height: auto;
   min-height: 150px;
@@ -72,88 +72,89 @@ div.mat-step-icon-state-done:host(.ng-tns-c42-0){
   display: block;
   border: 1px solid #4b4b4ba8;
   border-top: 2px solid #4b4b4ba8;
-  padding: 10px 0 ;
+  padding: 10px 0;
   background-color: rgba(214, 214, 214, 0.192);
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.cabecera-deuda{
+.cabecera-deuda {
   background-color: rgba(214, 214, 214, 0.473);
   padding: 10px 0 7px 12px;
   border: 1px solid #4b4b4ba8;
-  border-bottom: none;border-radius: 7px 7px 0 0;
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
 }
 
-.item-deuda{
+.item-deuda {
   height: 34px;
   display: flex;
   align-items: center;
-  border-top: .5px solid #929292;
+  border-top: 0.5px solid #929292;
   /* animation: forwards mostrardeuda 2s; */
 }
 
-.item-deuda:has(label.show-item-deuda){
-  animation: forwards mostrardeuda .6s;
+.item-deuda:has(label.show-item-deuda) {
+  animation: forwards mostrardeuda 0.6s;
   padding-left: 10px !important;
 }
 
-.item-deuda:has(label.show-item-deuda):hover{
+.item-deuda:has(label.show-item-deuda):hover {
   background-color: #11a1e41e;
 }
 
 @keyframes mostrardeuda {
-  from{
+  from {
     position: relative;
     /* right: -100px; */
-    opacity: .25;
+    opacity: 0.25;
     height: 0px;
   }
-  to{
+  to {
     /* transition: all cubic-bezier() 1s; */
     opacity: 1;
     /* right: 0; */
     height: 34px;
   }
 }
-.item-deuda:has(label.hide-item-deuda){
-  animation: forwards desvanever .6s;
+.item-deuda:has(label.hide-item-deuda) {
+  animation: forwards desvanever 0.6s;
 }
 
-.hide-item-deuda{
+.hide-item-deuda {
   color: red;
   display: none;
 }
 
-.item-deuda-text{
+.item-deuda-text {
   padding: 0 5px 0 20px;
   width: 100%;
   position: relative;
 }
-.check__item{
+.check__item {
   display: none;
 }
 
-.item-deuda-text:has(input.check__item)::before{
+.item-deuda-text:has(input.check__item)::before {
   position: absolute;
   top: 3px;
   left: 0;
-  content: "  ";
-  width: .8em;
-  height: .8em;
+  content: '  ';
+  width: 0.8em;
+  height: 0.8em;
   border-radius: 3px;
   border: 1px solid #09b961;
 }
 
-.item-deuda:has(input:checked){
+.item-deuda:has(input:checked) {
   background-color: #929292;
 }
 
-.btn-ver-detalle-deuda:hover{
+.btn-ver-detalle-deuda:hover {
   background-color: #0a98da;
 }
 
-.footer-deuda{
+.footer-deuda {
   background-color: rgba(214, 214, 214, 0.473);
   padding: 10px 0 7px 12px;
   border: 1px solid #4b4b4ba8;
@@ -162,26 +163,26 @@ div.mat-step-icon-state-done:host(.ng-tns-c42-0){
 }
 
 @keyframes desvanever {
-  100%{
+  100% {
     opacity: 0;
     height: 0;
-  };
-  75%{
+  }
+  75% {
     opacity: 0.5;
-  };
-  50%{
+  }
+  50% {
     opacity: 0.25;
-  };
-  25%{
+  }
+  25% {
     opacity: 0.75;
-  };
-  0%{
+  }
+  0% {
     opacity: 1;
   }
 }
 
 /*boton ver detalle deuda*/
-.btn-ver-detalle-deuda{
+.btn-ver-detalle-deuda {
   background-color: #0073aa;
   color: #fff;
   border-radius: 11px;
@@ -189,21 +190,20 @@ div.mat-step-icon-state-done:host(.ng-tns-c42-0){
   border: none;
 }
 
-
-.check__item_pay{
+.check__item_pay {
   display: none;
 }
 
-.pay__item_label a{
-    color: inherit;
-    text-decoration: none;
-    background: red;
-    color: white;
-    border-radius: 4px;
-    padding: 4px 8px;
+.pay__item_label a {
+  color: inherit;
+  text-decoration: none;
+  background: red;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 
-.next_button_container{
+.next_button_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,24 +211,24 @@ div.mat-step-icon-state-done:host(.ng-tns-c42-0){
 }
 
 /* Sumary container */
-.Sumary_container{
+.Sumary_container {
   width: 250px;
   background-color: transparent;
   border-radius: 5px;
   box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.171);
   padding: 12px 16px;
-  border: .3px solid rgba(0, 0, 0, 0.135);
+  border: 0.3px solid rgba(0, 0, 0, 0.135);
 }
 
-.Sumary_container > .sumary_title{
+.Sumary_container > .sumary_title {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.717);
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
   text-align: center;
   text-transform: uppercase;
 }
 
-.Sumary_container > .sumary_content{
+.Sumary_container > .sumary_content {
   font-size: 20px;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }

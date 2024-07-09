@@ -2,19 +2,18 @@ import { PredioSelected } from './../../models/predio-selected';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SelectPredioService {
-
   public predio_seleccionado!: PredioSelected;
 
-  constructor() { }
+  constructor() {}
 
   getPredioSeleccionado() {
-    return this.predio_seleccionado
+    return this.predio_seleccionado;
   }
 
-  UpdatePredioSelected(predio : PredioSelected) {
-    this.predio_seleccionado = predio
+  UpdatePredioSelected(predio: PredioSelected) {
+    this.predio_seleccionado = predio;
   }
 }

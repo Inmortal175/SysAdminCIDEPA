@@ -10,32 +10,31 @@ import { selectValues } from 'src/app/models/select-model';
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: SelectComponent
-    }
-  ]
+      useExisting: SelectComponent,
+    },
+  ],
 })
 export class SelectComponent implements ControlValueAccessor {
-  @Input() label_field! : string
+  @Input() label_field!: string;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   private onChange!: Function;
-  value = ""
+  value = '';
 
   listContent!: selectValues[];
 
   valueChange($event: any) {
     // this.onChange($event.target.value)
-    this.value = $event.target.value.toString()
-    console.log($event.target)
+    this.value = $event.target.value.toString();
+    console.log($event.target);
   }
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
-
-  }
+  registerOnTouched(fn: any): void {}
 
   writeValue(value: string): void {
-      this.value = value
+    this.value = value;
   }
 }

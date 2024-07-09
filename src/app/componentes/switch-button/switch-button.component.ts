@@ -9,12 +9,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => SwitchButtonComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class SwitchButtonComponent implements ControlValueAccessor {
-  contenido: boolean = true;
+  contenido = true;
   onChange: any = () => {};
   onTouch: any = () => {};
 

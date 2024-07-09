@@ -8,9 +8,8 @@ describe('RegistroPredioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegistroPredioComponent ]
-    })
-    .compileComponents();
+      declarations: [RegistroPredioComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RegistroPredioComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,4 @@
-export interface Predio{
+export interface Predio {
   id: any;
   departamento: string;
   provincia: string;
@@ -12,5 +12,5 @@ export interface Predio{
   created_at: string;
   last_modified: string;
   modified_by: string;
-  es_eliminado:boolean
+  es_eliminado: boolean;
 }

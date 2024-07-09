@@ -2,10 +2,8 @@ import { Injectable } from '@angular/core';
 //servicio para obtencion deudas
 import { DeudasToPayService } from './deudas-to-pay.service';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DeudasAllService {
-  constructor(private deudasToPayService : DeudasToPayService) { }
-
-
+  constructor(private deudasToPayService: DeudasToPayService) {}
 }

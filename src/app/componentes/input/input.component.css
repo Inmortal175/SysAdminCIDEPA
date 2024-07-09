@@ -2,14 +2,14 @@
   position: relative;
 }
 
-label{
+label {
   display: flex;
 }
 .input__label {
   position: absolute;
   left: 0;
   top: 0;
-  padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+  padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
   margin: calc(var(--size-bezel) * 0.75 + 13px) 16px;
   white-space: nowrap;
   transform: translate(0, 0);
@@ -37,31 +37,31 @@ label{
   margin-top: 5px;
 }
 
-.input__field:focus{
+.input__field:focus {
   border: none;
 }
 
-.input__field:not(:-moz-placeholder-shown)+.input__label {
+.input__field:not(:-moz-placeholder-shown) + .input__label {
   transform: translate(0.25rem, -65%) scale(0.8);
   color: var(--color-accent);
 }
 
-.input__field:not(:-ms-input-placeholder)+.input__label {
+.input__field:not(:-ms-input-placeholder) + .input__label {
   transform: translate(0.25rem, -65%) scale(0.8);
   color: var(--color-accent);
 }
 
-.input__field:focus+.input__label,
-.input__field:not(:placeholder-shown)+.input__label {
+.input__field:focus + .input__label,
+.input__field:not(:placeholder-shown) + .input__label {
   transform: translate(-3px, -65%) scale(0.8);
   color: var(--text-color-blue);
 }
-.input__field:not(:focus)+.input__label{
+.input__field:not(:focus) + .input__label {
   padding-top: 10px;
   top: -5px;
   color: black;
 }
-.input__field:focus+.input__label {
+.input__field:focus + .input__label {
   top: -5px;
 }
 .input__field:focus {
@@ -69,12 +69,12 @@ label{
   outline: var(--text-color-blue) 2px solid;
 }
 
-div{
+div {
   width: 100%;
 }
 
-@media screen and (max-width : 400px) {
-  .input__field{
+@media screen and (max-width: 400px) {
+  .input__field {
     width: auto;
   }
 }
