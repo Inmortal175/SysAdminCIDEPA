@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,42 +23,48 @@ import { RegistroCalleComponent } from './pages/registro-calle/registro-calle.co
 import { RegistroPredioComponent } from './pages/registro-predio/registro-predio.component';
 import { DeudasComponent } from './pages/deudas/deudas.component';
 import { SweetAlertdosModule } from './sweet-alertdos/sweet-alertdos.module';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { CurrencyPipe } from '@angular/common';
+import { ModuloCajaComponent } from './pages/modulo-caja/modulo-caja.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+import { AsistenciaComponent } from './pages/asistencia/asistencia.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    InputComponent,
-    MainPageComponent,
-    RegistroPropietarioComponent,
-    PanelComponent,
-    SpinnerComponent,
-    SelectComponent,
-    ButtonComponent,
-    SwitchButtonComponent,
-    RegistroCalleComponent,
-    RegistroPredioComponent,
-    DeudasComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule,
-    SweetAlertdosModule,
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true,
-    },
-    CurrencyPipe,
-  ],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        InputComponent,
+        MainPageComponent,
+        RegistroPropietarioComponent,
+        PanelComponent,
+        SpinnerComponent,
+        SelectComponent,
+        ButtonComponent,
+        SwitchButtonComponent,
+        RegistroCalleComponent,
+        RegistroPredioComponent,
+        DeudasComponent,
+        ModuloCajaComponent,
+        PerfilUsuarioComponent,
+        AsistenciaComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        AngularMaterialModule,
+        SweetAlertdosModule,
+        ZXingScannerModule,
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true,
+        },
+        CurrencyPipe,
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

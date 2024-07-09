@@ -1,4 +1,4 @@
-.select {
+/* .select {
   position: relative;
   display: flex;
 }
@@ -9,12 +9,12 @@
   height: 28px;
   margin-top: 5px;
   border-radius: 4px;
-}
+} */
 
 .def-option {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
-
+/* 
 .select__label {
   position: absolute;
   top: -4px;
@@ -44,4 +44,13 @@
   background-color: #0073aa;
   color: white;
   text-transform: uppercase;
+} */
+
+.form-select {
+    height: 57px;
+    box-sizing: border-box;
+}
+
+.isRequired {
+    color: red;
 }

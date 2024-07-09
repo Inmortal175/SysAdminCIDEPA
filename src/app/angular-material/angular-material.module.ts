@@ -5,6 +5,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
-  exports: [CommonModule, MatTableModule, MatPaginatorModule, MatStepperModule],
+    exports: [CommonModule, MatTableModule, MatPaginatorModule, MatStepperModule],
 })
 export class AngularMaterialModule {}

@@ -1,7 +1,11 @@
-<div class="select">
-  <select class="field__select" id="select_option" (change)="valueChange($event)">
+<label for="{{ label_field }}" class="form-label">
+    {{ label_field }}
+    <span class="isRequired" *ngIf="feedBack !== 'choose a feedback'">*</span>
+</label>
+<select class="form-select" id="{{ label_field }}" (change)="valueChange($event)" [ngClass]="ngClass">
     <option class="def-option" [value]="value" selected disabled [class.def-option]="true">Seleccione una opción</option>
     <option *ngFor="let option of listContent" [value]="option.value" [class.option-active]="option.value === value">{{ option.text }}</option>
-  </select>
-  <label for="select_option" class="select__label">{{ label_field }}</label>
+</select>
+<div class="invalid-feedback">
+    {{ feedBack }}
 </div>

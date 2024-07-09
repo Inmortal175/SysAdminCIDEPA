@@ -2,26 +2,31 @@ import { Component, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      multi: true,
-      useExisting: ButtonComponent,
-    },
-  ],
+    selector: 'app-button',
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.css'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            multi: true,
+            useExisting: ButtonComponent,
+        },
+    ],
 })
 export class ButtonComponent implements ControlValueAccessor {
-  @Input() btn_class = 'btn-warning';
-  @Input() icon_class = 'fa-user-alt';
-  @Input() buttonName = 'Custom Buttom';
-  @Input() addClass = '';
+    @Input() btn_class = 'btn-warning';
+    @Input() icon_class = 'fa-user-alt';
+    @Input() buttonName = 'Custom Buttom';
+    @Input() addClass = '';
+    @Input() Funcion!: any;
 
-  registerOnChange(fn: any): void {}
+    CallFatherFunction() {
+        this.Funcion();
+    }
 
-  registerOnTouched(fn: any): void {}
+    registerOnChange(fn: any): void {}
 
-  writeValue(obj: any): void {}
+    registerOnTouched(fn: any): void {}
+
+    writeValue(obj: any): void {}
 }

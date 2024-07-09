@@ -1,0 +1,85 @@
+div.main {
+    background-color: white;
+    border-top: #0073aa solid 4px;
+    margin: 22px;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.tab-container {
+    background-color: rgb(255, 255, 255);
+}
+
+.tab-container ul {
+    /* background-color: #0073aa; */
+    position: relative;
+    display: flex;
+    flex-direction: row nowrap;
+    margin: 0;
+}
+
+.tab-container .li {
+    font-size: 16px;
+    background-color: #008ecf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.61);
+    padding: 7px 12px;
+    border-top: 1px solid rgb(182, 182, 182);
+    border-right: 1.5px solid rgb(182, 182, 182);
+    border-left: 1.5px solid rgb(182, 182, 182);
+    border-radius: 12px 12px 0px 0px;
+    margin-right: 1px;
+}
+
+.tab-container .li:hover {
+    background-color: #008ecf;
+    color: white;
+}
+.tab-container .li:active {
+    background-color: #e6e6e6;
+}
+
+.tab-container .li[aria-disabled='true'],
+.tab-container .li[aria-disabled='true']:hover {
+    background-color: rgb(189, 189, 189);
+    color: black;
+    /* pointer-events: none; */
+    cursor: not-allowed;
+}
+.tab-container .li.activo {
+    font-weight: bolder;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding-bottom: 1em;
+    border-top: 4px solid rgb(79, 255, 25);
+    border-right: 1.5px solid rgb(182, 182, 182);
+    border-left: 1.5px solid rgb(182, 182, 182);
+    position: relative;
+    top: 1px;
+    z-index: 1;
+}
+.tab-container .li > i {
+    font-size: xx-large;
+    margin-bottom: 0.5em;
+}
+
+.tab-container .tab-subcontainer {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 1.5px solid rgb(182, 182, 182);
+}
+.tab-container .bloque {
+    position: absolute;
+    top: 1;
+    background-color: rgb(255, 255, 255);
+    opacity: 0;
+}
+
+.tab-subcontainer .bloque.activo {
+    position: relative;
+    opacity: 1;
+    padding: 0.75em 1.5em;
+    transition: ease-in 300ms;
+}

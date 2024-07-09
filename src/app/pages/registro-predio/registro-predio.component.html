@@ -1,173 +1,176 @@
 <div class="main">
-  <h2>Registro de Predio</h2>
-  <form>
-    <div class="row align-items">
-      <div class="col-md-4 mt-3">
-        <app-select [label_field]="'Sector'"></app-select>
-      </div>
-      <div class="col-md-4 mt-3">
-        <app-select [label_field]="'Manzana'"></app-select>
-      </div>
-      <div class="col mt-3">
-        <app-select [label_field]="'Lote'"></app-select>
-      </div>
-    </div>
-    <div class="row align-items">
-      <div class="col-md-4 mt-3">
-        <app-select [label_field]="'Departamento'"></app-select>
-      </div>
-      <div class="col-md-4 mt-3">
-        <app-select [label_field]="'Provincia'"></app-select>
-      </div>
-      <div class="col mt-3">
-        <app-select [label_field]="'Distrito'"></app-select>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col-md-4">
-        <app-select [label_field]="'Calle'"></app-select>
-      </div>
-      <div class="col-md-3">
-        <app-select [label_field]="'Propietario'"></app-select>
-      </div>
-      <div class="col align-self-center btn-container">
-        <app-button [btn_class]="'btn-primary'" [icon_class]="'fa-save'" [buttonName]="'Guardar propietario'"></app-button>
-        <app-button [btn_class]="'btn-danger'" [icon_class]="'fa-trash'" [buttonName]="'Limpiar datos'"></app-button>
-      </div>
-    </div>
-  </form>
+    <h2>Registro de Predio</h2>
+    <form>
+        <div class="row align-items">
+            <div class="col-md-4 mt-3">
+                <app-select [label_field]="'Sector'" [feedBack]="'Elija un Sector válido'"></app-select>
+            </div>
+            <div class="col-md-4 mt-3">
+                <app-select [label_field]="'Manzana'" [feedBack]="'Elija una Manzana válida'"></app-select>
+            </div>
+            <div class="col mt-3">
+                <app-select [label_field]="'Lote'" [feedBack]="'Elija un Lote válido'"></app-select>
+            </div>
+        </div>
+        <div class="row align-items">
+            <div class="col-md-4 mt-3">
+                <app-select [label_field]="'Departamento'" [feedBack]="'Elija un Departamento válido'"></app-select>
+            </div>
+            <div class="col-md-4 mt-3">
+                <app-select [label_field]="'Provincia'" [feedBack]="'Elija un Provincia válida'"></app-select>
+            </div>
+            <div class="col mt-3">
+                <app-select [label_field]="'Distrito'" [feedBack]="'Elija un Distrito válido'"></app-select>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <app-select [label_field]="'Calle'" [feedBack]="'Elija una calle válida'"></app-select>
+            </div>
+            <div class="col-md-3">
+                <app-select [label_field]="'Propietario'" [feedBack]="'Elija un propietario válido'"></app-select>
+            </div>
+            <div class="col align-self-center btn-container">
+                <app-button [btn_class]="'btn-primary'" [icon_class]="'fa-save'" [buttonName]="'Guardar propietario'"></app-button>
+                <app-button [btn_class]="'btn-danger'" [icon_class]="'fa-trash'" [buttonName]="'Limpiar datos'"></app-button>
+            </div>
+        </div>
+    </form>
 </div>
 <div class="main">
-  <div class="row">
-    <div class="col">
-      <!-- table -->
-      <div class="card mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
-          <!-- Position Column -->
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>No.</th>
-            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-          </ng-container>
-          <!-- surname Column -->
-          <ng-container matColumnDef="sector">
-            <th mat-header-cell *matHeaderCellDef>Sector</th>
-            <td mat-cell *matCellDef="let element">{{ element.sector }}</td>
-          </ng-container>
-          <!-- Name Column -->
-          <ng-container matColumnDef="calle">
-            <th mat-header-cell *matHeaderCellDef>Calle</th>
-            <td mat-cell *matCellDef="let element">{{ element.calle }}</td>
-          </ng-container>
+    <div class="row">
+        <div class="col">
+            <!-- table -->
+            <div class="card mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef>No.</th>
+                        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+                    </ng-container>
+                    <!-- surname Column -->
+                    <ng-container matColumnDef="sector">
+                        <th mat-header-cell *matHeaderCellDef>Sector</th>
+                        <td mat-cell *matCellDef="let element">{{ element.sector }}</td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="calle">
+                        <th mat-header-cell *matHeaderCellDef>Calle</th>
+                        <td mat-cell *matCellDef="let element">{{ element.calle }}</td>
+                    </ng-container>
 
-          <!-- Weight Column -->
-          <ng-container matColumnDef="manzana">
-            <th mat-header-cell *matHeaderCellDef>Manzana</th>
-            <td mat-cell *matCellDef="let element">{{ element.manzana }}</td>
-          </ng-container>
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="manzana">
+                        <th mat-header-cell *matHeaderCellDef>Manzana</th>
+                        <td mat-cell *matCellDef="let element">{{ element.manzana }}</td>
+                    </ng-container>
 
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="lote">
-            <th mat-header-cell *matHeaderCellDef>Lote</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.lote }}
-            </td>
-          </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="lote">
+                        <th mat-header-cell *matHeaderCellDef>Lote</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.lote }}
+                        </td>
+                    </ng-container>
 
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="comunero">
-            <th mat-header-cell *matHeaderCellDef>Propietario</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.comunero }}
-            </td>
-          </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="comunero">
+                        <th mat-header-cell *matHeaderCellDef>Propietario</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.comunero }}
+                        </td>
+                    </ng-container>
 
-          <!-- columna de acciones -->
-          <ng-container matColumnDef="acciones">
-            <th mat-header-cell *matHeaderCellDef>Acciones</th>
-            <td mat-cell *matCellDef="let botonEl">
-              <div class="btn-container">
-                <app-button
-                  [buttonName]="'Detalles'"
-                  [icon_class]="'fa-eye'"
-                  [btn_class]="'btn-info'"
-                  data-bs-toggle="modal"
-                  data-bs-target="#DetallesModal"
-                  (click)="showDetail(botonEl.id)"></app-button>
-                <app-button [buttonName]="'Eliminar'" [icon_class]="'fa-trash-alt'" [btn_class]="'btn-danger'"></app-button>
+                    <!-- columna de acciones -->
+                    <ng-container matColumnDef="acciones">
+                        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+                        <td mat-cell *matCellDef="let botonEl">
+                            <div class="btn-container">
+                                <app-button
+                                    [buttonName]="'Detalles'"
+                                    [icon_class]="'fa-eye'"
+                                    [btn_class]="'btn-info'"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#DetallesModal"
+                                    (click)="showDetail(botonEl.id)"></app-button>
+                                <app-button [buttonName]="'Eliminar'" [icon_class]="'fa-trash-alt'" [btn_class]="'btn-danger'"></app-button>
 
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="DetallesModal"
-                  aria-labelledby="DetallesModalLabel"
-                  aria-hidden="true"
-                  data-bs-backdrop="static"
-                  data-bs-keyboard="false"
-                  tabindex="-1">
-                  <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="DetallesModalLabel">Modal title</h1>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="row mt-1">
-                            <div class="col">
-                              <app-input [label_field]="'Apellidos'"></app-input>
+                                <!-- Modal -->
+                                <div
+                                    class="modal fade"
+                                    id="DetallesModal"
+                                    aria-labelledby="DetallesModalLabel"
+                                    aria-hidden="true"
+                                    data-bs-backdrop="static"
+                                    data-bs-keyboard="false"
+                                    tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="DetallesModalLabel">Modal title</h1>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="row mt-1">
+                                                        <div class="col">
+                                                            <app-input [label_field]="'Apellidos'"></app-input>
+                                                        </div>
+                                                        <div class="col">
+                                                            <app-input [label_field]="'Nombres'"></app-input>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-3">
+                                                        <div class="col">
+                                                            <app-input [label_field]="'DNI'"></app-input>
+                                                        </div>
+                                                        <div class="col">
+                                                            <app-input [label_field]="'Celular (opcional)'"></app-input>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-4 mb-2">
+                                                        <div class="col">
+                                                            <div>
+                                                                <strong>Última modificación:</strong>
+                                                                <span>&nbsp;</span>
+                                                                {{ '30/12/13' }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div>
+                                                                <strong>Modificado por:</strong>
+                                                                <span>&nbsp;</span>
+                                                                Franklin figueroa perez
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <app-button
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"
+                                                    [icon_class]="'fa-times'"
+                                                    [buttonName]="'Cancelar'"
+                                                    [btn_class]="'btn-danger'"></app-button>
+                                                <app-button
+                                                    [icon_class]="'fa-save'"
+                                                    [buttonName]="'Guardar cambios'"
+                                                    [btn_class]="'btn-success'"></app-button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end modal -->
                             </div>
-                            <div class="col">
-                              <app-input [label_field]="'Nombres'"></app-input>
-                            </div>
-                          </div>
-                          <div class="row mt-3">
-                            <div class="col">
-                              <app-input [label_field]="'DNI'"></app-input>
-                            </div>
-                            <div class="col">
-                              <app-input [label_field]="'Celular (opcional)'"></app-input>
-                            </div>
-                          </div>
-                          <div class="row mt-4 mb-2">
-                            <div class="col">
-                              <div>
-                                <strong>Última modificación:</strong>
-                                <span>&nbsp;</span>
-                                {{ '30/12/13' }}
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div>
-                                <strong>Modificado por:</strong>
-                                <span>&nbsp;</span>
-                                Franklin figueroa perez
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <app-button
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                          [icon_class]="'fa-times'"
-                          [buttonName]="'Cancelar'"
-                          [btn_class]="'btn-danger'"></app-button>
-                        <app-button [icon_class]="'fa-save'" [buttonName]="'Guardar cambios'" [btn_class]="'btn-success'"></app-button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end modal -->
-              </div>
-            </td>
-          </ng-container>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns" class="select-row"></tr>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
-        </table>
-        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" showFirstLastButtons></mat-paginator>
-      </div>
-      <!-- end table -->
+                        </td>
+                    </ng-container>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns" class="select-row"></tr>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" showFirstLastButtons></mat-paginator>
+            </div>
+            <!-- end table -->
+        </div>
     </div>
-  </div>
 </div>

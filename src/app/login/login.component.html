@@ -1,27 +1,27 @@
 <div class="body">
-  <div class="grid align__item">
-    <div class="register">
-      <img src="../../assets/images/login.png" alt="" width="100" class="site__logo" />
+    <div class="grid align__item">
+        <div class="register">
+            <img src="../../assets/images/login.png" alt="" width="100" class="site__logo" />
 
-      <h2>ADCIDEPA</h2>
-      <form [formGroup]="Loginform" class="form">
-        <div class="form__field">
-          <input type="text" placeholder="Nombre de usuario" formControlName="username" />
-        </div>
+            <h2>ADCIDEPA</h2>
+            <form [formGroup]="Loginform" class="form">
+                <div class="form__field">
+                    <input type="text" placeholder="Nombre de usuario" formControlName="username" />
+                </div>
 
-        <div class="form__field">
-          <input type="password" placeholder="••••••••••••" formControlName="password" />
-        </div>
-        <hr class="separator_line" />
-        <div class="form__field">
-          <input type="submit" value="Iniciar Sesión" (click)="login()" />
-        </div>
-      </form>
+                <div class="form__field">
+                    <input type="password" placeholder="••••••••••••" formControlName="password" />
+                </div>
+                <hr class="separator_line" />
+                <div class="form__field">
+                    <input type="submit" value="Iniciar Sesión" (click)="login()" />
+                </div>
+            </form>
 
-      <p>
-        ¿Tienes problemas?
-        <a href="#">Contactar desarrollador</a>
-      </p>
+            <p>
+                ¿Tienes problemas?
+                <a href="#">Contactar desarrollador</a>
+            </p>
+        </div>
     </div>
-  </div>
 </div>

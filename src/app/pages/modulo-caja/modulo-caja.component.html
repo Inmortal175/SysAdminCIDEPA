@@ -1,0 +1,130 @@
+<div class="row">
+    <!-- <div class="col-md-3">
+        <div class="main">Hola1</div>
+    </div> -->
+    <div class="col">
+        <div class="main">
+            <div class="tab-container container">
+                <ul>
+                    <!-- Tab buttons -->
+                    <li #li class="li text-center activo" role="button">
+                        <i class="fa-solid fa-cash-register"></i>
+                        (Abrir/Cerrar) Caja
+                    </li>
+                    <li #li class="li" role="button" aria-disabled="">
+                        <i class="fa-solid fa-coins mx-2"></i>
+                        Caja
+                    </li>
+                </ul>
+                <div class="tab-subcontainer">
+                    <!-- bloques de  contenido -->
+                    <div #bloque class="bloque activo">
+                        <div class="container">
+                            <div class="card">
+                                <h2 class="card-header">
+                                    <div class="row">
+                                        <div class="col">Apertura de Caja</div>
+                                        <div class="col text-end">
+                                            Status:
+                                            <span class="badge text-bg-success" *ngIf="true">Caja Activa</span>
+                                            <span class="badge text-bg-danger" *ngIf="false">Caja Inactiva</span>
+                                        </div>
+                                    </div>
+                                </h2>
+                                <div class="card-body">
+                                    <!-- abri caja -->
+                                    <div class="card" *ngIf="false">
+                                        <div class="alert alert-primary fs-6" role="alert">
+                                            <span><i class="fa-solid fa-circle-info"></i></span>
+                                            <p>
+                                                Sobre el
+                                                <strong>Abono inicial de caja:</strong>
+                                                <br />
+                                                <br />
+                                                Este abono es un monto de dinero que se ingresa a la caja al momento de abrirla. El objetivo de esta
+                                                accion es que la caja tenga sencillo para dar vuelto en caso de recaudaciones.
+                                                <br />
+                                                Si no desea asignar abono inicial a esta caja al abrirla, simplemente ingrese
+                                                <strong>0</strong>
+                                                .
+                                            </p>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr scope="row">
+                                                    <td class="fs-4">Responsable</td>
+                                                    <td>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text" id="basic-addon1">Usuario</span>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                placeholder="Responsable"
+                                                                disabled
+                                                                aria-describedby="basic-addon1" />
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fs-4">Saldo final caja anterior</td>
+                                                    <td>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text" id="basic-addon1">S/.</span>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                placeholder="Saldo (soles)"
+                                                                disabled
+                                                                aria-describedby="basic-addon1" />
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fs-4">Abono inicial de caja</td>
+                                                    <td>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text" id="basic-addon1">S/.</span>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                placeholder="Abono inicial (soles)"
+                                                                aria-describedby="basic-addon1" />
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-end mb-3 mr-3">
+                                                <app-button
+                                                    buttonName="Abrir Caja"
+                                                    btn_class="btn-success"
+                                                    icon_class="fa-cash-register fa-xl"></app-button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- cerrar caja -->
+                                    <div class="card">
+                                        <div class="card-header fs-4">
+                                            <div class="row">
+                                                <div class="col">Total en caja:</div>
+                                                <div class="col text-end">S/. 0.00</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div #bloque class="bloque">
+                        <div class="card">
+                            <div class="card-header"><span class="fs-4 text-success">Movimientos</span></div>
+                            <div class="card-body">hola</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

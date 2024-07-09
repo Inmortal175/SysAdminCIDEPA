@@ -1,0 +1,43 @@
+<div class="">
+    <div class="row bg-white mb-4 p-4 justify-content-center">
+        <div class="row mb-3">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <label class="form-label fs-5 text-center" for="">Seleccionar WebCam</label>
+                <select class="form-select form-select-lg" (change)="onDeviceSelectChange($event)">
+                    <option *ngFor="let device of availableDevices" [value]="device.deviceId">
+                        {{ device.label }}
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <label class="form-label fs-5 text-center" for="">Seleccionar Actividad</label>
+                    <select class="form-select form-select-lg" (change)="onDeviceSelectChange($event)">
+                        <option *ngFor="let device of availableDevices" [value]="device.deviceId">
+                            {{ device.label }}
+                        </option>
+                    </select>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <app-button btn_class="btn-danger" icon_class="fa-arrow-right-from-bracket fa-xl" buttonName="Finalizar Registro de Asistencia"></app-button>
+            </div>
+        </div>
+        <div></div>
+        <div class="carcasa d-flex justify-content-center align-items-center">
+            <div class="pantalla d-flex justify-content-center">
+                <div class="marco__lente d-flex justify-content-center align-items-center">
+                    <div class="borde__lente d-flex justify-content-center align-items-center">
+                        <div class="lente1 d-flex justify-content-center align-items-center">
+                            <div class="lente2 d-flex justify-content-center align-items-center">
+                                <div class="lente3 d-flex justify-content-center align-items-center"><div class="lente4"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <zxing-scanner *ngIf="true"  [device]="currentDevice" [formats]="allowedFormats" (scanSuccess)="scanSuccess($event)"></zxing-scanner>
+                <div [class.red_line]="false"></div>
+                <div *ngIf="false" class="no_cam">CAMERA OFF <hr> <span>No te olvides de seleccionar una Actividad</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-white p-4">dlkj</div>
+</div>

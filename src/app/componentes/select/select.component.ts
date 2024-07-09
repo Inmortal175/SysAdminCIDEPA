@@ -3,38 +3,44 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { selectValues } from 'src/app/models/select-model';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      multi: true,
-      useExisting: SelectComponent,
-    },
-  ],
+    selector: 'app-select',
+    templateUrl: './select.component.html',
+    styleUrls: ['./select.component.css'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            multi: true,
+            useExisting: SelectComponent,
+        },
+    ],
 })
 export class SelectComponent implements ControlValueAccessor {
-  @Input() label_field!: string;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  private onChange!: Function;
-  value = '';
+    constructor() {
+        this.registerOnChange((value: any) => {
+            this.value = value;
+        });
+    }
+    @Input() label_field!: string;
+    @Input() ngClass!: any;
+    @Input() feedBack = 'choose a feedback';
 
-  listContent!: selectValues[];
+    private onChange!: (arg: any) => void;
+    value = '';
 
-  valueChange($event: any) {
-    // this.onChange($event.target.value)
-    this.value = $event.target.value.toString();
-    console.log($event.target);
-  }
+    listContent!: selectValues[];
 
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
+    valueChange($event: any) {
+        const Valor = $event.target.value.toString();
+        this.onChange(Valor);
+    }
 
-  registerOnTouched(fn: any): void {}
+    registerOnChange(fn: any): void {
+        this.onChange = fn;
+    }
 
-  writeValue(value: string): void {
-    this.value = value;
-  }
+    registerOnTouched(fn: any): void {}
+
+    writeValue(value: string): void {
+        this.value = value;
+    }
 }

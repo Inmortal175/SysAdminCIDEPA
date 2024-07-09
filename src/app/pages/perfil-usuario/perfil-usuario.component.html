@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row gap-3">
+        <div class="col-md-4 bg-white">
+            <div class="profile-container">
+                <div class="profile_img">
+                    <figure><img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp" alt="Perfil" /></figure>
+                    <p>
+                        <span>Figueroa Perez, Franklin</span>
+                        <br />
+                        <span>Presidente</span>
+                    </p>
+                    <button class="btn btn-primary">
+                        <i class="fa-solid fa-camera-rotate"></i>
+                        Cambiar Perfil
+                    </button>
+                </div>
+                <div class="some_options">
+                    <app-button btn_class="btn-primary" icon_class="fa-key fa-xl" buttonName="Cambiar contraseña"></app-button>
+                </div>
+            </div>
+        </div>
+        <div class="col bg-white p-3">
+            <h2>Datos Personales</h2>
+            <app-input label_field="NOMBRES" [IsDisabled]="true"></app-input>
+            <app-input label_field="APELLIDO PATERNO" [IsDisabled]="true"></app-input>
+            <app-input label_field="APELLIDO MATERNO" [IsDisabled]="true"></app-input>
+            <app-input label_field="CELULAR"></app-input>
+            <app-input label_field="EMAIL"></app-input>
+            <h2>Otros</h2>
+            <h4><strong>Rol:</strong></h4>
+            <p>Cajero</p>
+
+            <h3><strong>Última Modificacion</strong></h3>
+            <p>12/06/2024 a las 1:00pm</p>
+            <div class="d-flex justify-content-end">
+                <app-button btn_class="btn-primary" buttonName="Guardar Cambios" icon_class="fa-save fa-xl"></app-button>
+            </div>
+        </div>
+    </div>
+</div>

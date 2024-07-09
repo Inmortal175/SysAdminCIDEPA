@@ -1,234 +1,331 @@
 .mat-stepper-horizontal {
-  margin-top: 8px;
+    margin-top: 8px;
 }
 
 .mat-mdc-form-field {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 div.main {
-  background-color: white;
-  border-top: #0073aa solid 4px;
-  margin: 22px;
-  padding: 12px;
-  border-radius: 4px;
+    background-color: white;
+    border-top: #0073aa solid 4px;
+    margin: 22px;
+    padding: 12px;
+    border-radius: 4px;
 }
 .select-row:hover {
-  background-color: rgba(245, 245, 220, 0.203) !important;
+    background-color: rgba(245, 245, 220, 0.203) !important;
 }
 
 table {
-  width: 100%;
+    width: 100%;
 }
 
 .btn-container {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .mdc-data-table__header-cell {
-  background-color: #0073aa !important;
-  color: white;
-  align-self: center;
+    background-color: #0073aa !important;
+    color: white;
+    align-self: center;
 }
 
 div.mat-step-icon-state-done:host(.ng-tns-c42-0) {
-  background-color: #09b961 !important;
+    background-color: #09b961 !important;
 }
 .mat-step-header {
-  background-color: #0073aa;
+    background-color: #0073aa;
 }
 
 /*estados de padron*/
 .padron-active {
-  color: rgb(11, 184, 20);
+    color: rgb(11, 184, 20);
 }
 .padron-inactive {
-  color: rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
 }
 /*datos propietario*/
 .title-prop {
-  display: contents;
-  font-size: 18px;
-  font-weight: 500;
+    display: contents;
+    font-size: 18px;
+    font-weight: 500;
 }
 .text-prop {
-  display: contents;
-  font-size: 16px;
-  font-weight: 400;
+    display: contents;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /*para select multiple*/
 .main-container-deudas {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
 .main-select-container,
 .Sumary_container {
-  width: 400px;
-  height: auto;
-  min-height: 150px;
-  max-height: 350px;
-  display: block;
-  border: 1px solid #4b4b4ba8;
-  border-top: 2px solid #4b4b4ba8;
-  padding: 10px 0;
-  background-color: rgba(214, 214, 214, 0.192);
-  overflow-y: auto;
-  overflow-x: hidden;
+    width: 400px;
+    height: auto;
+    min-height: 150px;
+    max-height: 350px;
+    display: block;
+    border: 1px solid #4b4b4ba8;
+    border-top: 2px solid #4b4b4ba8;
+    padding: 10px 0;
+    background-color: rgba(214, 214, 214, 0.192);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .cabecera-deuda {
-  background-color: rgba(214, 214, 214, 0.473);
-  padding: 10px 0 7px 12px;
-  border: 1px solid #4b4b4ba8;
-  border-bottom: none;
-  border-radius: 7px 7px 0 0;
+    background-color: rgba(214, 214, 214, 0.473);
+    padding: 10px 0 7px 12px;
+    border: 1px solid #4b4b4ba8;
+    border-bottom: none;
+    border-radius: 7px 7px 0 0;
 }
 
 .item-deuda {
-  height: 34px;
-  display: flex;
-  align-items: center;
-  border-top: 0.5px solid #929292;
-  /* animation: forwards mostrardeuda 2s; */
+    height: 34px;
+    display: flex;
+    align-items: center;
+    border-top: 0.5px solid #929292;
+    /* animation: forwards mostrardeuda 2s; */
 }
 
 .item-deuda:has(label.show-item-deuda) {
-  animation: forwards mostrardeuda 0.6s;
-  padding-left: 10px !important;
+    animation: forwards mostrardeuda 0.6s;
+    padding-left: 10px !important;
 }
 
 .item-deuda:has(label.show-item-deuda):hover {
-  background-color: #11a1e41e;
+    background-color: #11a1e41e;
 }
 
 @keyframes mostrardeuda {
-  from {
-    position: relative;
-    /* right: -100px; */
-    opacity: 0.25;
-    height: 0px;
-  }
-  to {
-    /* transition: all cubic-bezier() 1s; */
-    opacity: 1;
-    /* right: 0; */
-    height: 34px;
-  }
+    from {
+        position: relative;
+        /* right: -100px; */
+        opacity: 0.25;
+        height: 0px;
+    }
+    to {
+        /* transition: all cubic-bezier() 1s; */
+        opacity: 1;
+        /* right: 0; */
+        height: 34px;
+    }
 }
 .item-deuda:has(label.hide-item-deuda) {
-  animation: forwards desvanever 0.6s;
+    animation: forwards desvanever 0.6s;
 }
 
 .hide-item-deuda {
-  color: red;
-  display: none;
+    color: red;
+    display: none;
 }
 
 .item-deuda-text {
-  padding: 0 5px 0 20px;
-  width: 100%;
-  position: relative;
+    padding: 0 5px 0 20px;
+    width: 100%;
+    position: relative;
 }
 .check__item {
-  display: none;
+    display: none;
 }
 
 .item-deuda-text:has(input.check__item)::before {
-  position: absolute;
-  top: 3px;
-  left: 0;
-  content: '  ';
-  width: 0.8em;
-  height: 0.8em;
-  border-radius: 3px;
-  border: 1px solid #09b961;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    content: '  ';
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 3px;
+    border: 1px solid #09b961;
 }
 
 .item-deuda:has(input:checked) {
-  background-color: #929292;
+    background-color: #929292;
 }
 
 .btn-ver-detalle-deuda:hover {
-  background-color: #0a98da;
+    background-color: #0a98da;
 }
 
 .footer-deuda {
-  background-color: rgba(214, 214, 214, 0.473);
-  padding: 10px 0 7px 12px;
-  border: 1px solid #4b4b4ba8;
-  border-top: none;
-  border-radius: 0 0 7px 7px;
+    background-color: rgba(214, 214, 214, 0.473);
+    padding: 10px 0 7px 12px;
+    border: 1px solid #4b4b4ba8;
+    border-top: none;
+    border-radius: 0 0 7px 7px;
 }
 
 @keyframes desvanever {
-  100% {
-    opacity: 0;
-    height: 0;
-  }
-  75% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.25;
-  }
-  25% {
-    opacity: 0.75;
-  }
-  0% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    0% {
+        opacity: 1;
+    }
 }
 
 /*boton ver detalle deuda*/
 .btn-ver-detalle-deuda {
-  background-color: #0073aa;
-  color: #fff;
-  border-radius: 11px;
-  padding: 0 6px;
-  border: none;
+    background-color: #0073aa;
+    color: #fff;
+    border-radius: 11px;
+    padding: 0 6px;
+    border: none;
 }
 
 .check__item_pay {
-  display: none;
+    display: none;
 }
 
 .pay__item_label a {
-  color: inherit;
-  text-decoration: none;
-  background: red;
-  color: white;
-  border-radius: 4px;
-  padding: 4px 8px;
+    color: inherit;
+    text-decoration: none;
+    background: red;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px;
 }
 
 .next_button_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
 }
 
 /* Sumary container */
 .Sumary_container {
-  width: 250px;
-  background-color: transparent;
-  border-radius: 5px;
-  box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.171);
-  padding: 12px 16px;
-  border: 0.3px solid rgba(0, 0, 0, 0.135);
+    width: 250px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.171);
+    padding: 12px 16px;
+    border: 0.3px solid rgba(0, 0, 0, 0.135);
 }
 
 .Sumary_container > .sumary_title {
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.717);
-  margin-bottom: 0.75rem;
-  text-align: center;
-  text-transform: uppercase;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.717);
+    margin-bottom: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .Sumary_container > .sumary_content {
-  font-size: 20px;
-  margin-bottom: 0.75rem;
+    font-size: 20px;
+    margin-bottom: 0.75rem;
+}
+/* end deudas selected */
+/* pay styles */
+.deudas_list_container,
+.sumary_pay_container {
+    padding: 12px 16px;
+    /* color: white; */
+    justify-content: center;
+    align-items: center;
+}
+.deudas_list_container {
+    grid-area: deudas_list;
+    /* background-color: #0073aa; */
+}
+.sumary_pay_container {
+    grid-area: sumary_pay;
+    /* background-color: #0a98da; */
+}
+.pay_container {
+    display: grid;
+    grid-template-areas: 'deudas_list sumary_pay';
+}
+
+/* table deudas a pagar */
+
+.debit_table_list {
+    user-select: none;
+}
+
+.deudas_list_table_head {
+    border-radius: 7px 7px 0 0;
+    box-shadow:
+        0px -4px 8px rgba(0, 0, 0, 0.137),
+        2px 6px 6px rgba(0, 0, 0, 0.137);
+}
+.table_head_num {
+    width: 55px;
+    padding: 16px 7px;
+    text-align: center;
+}
+
+.table_head_motivo,
+.table_head_fecha,
+.table_head_monto {
+    max-width: 250px;
+    min-width: 150px;
+    padding: 16px 7px;
+    text-align: center;
+}
+
+.table_head_comentario {
+    width: 250px;
+    text-align: center;
+}
+
+.table_head_num,
+.table_head_motivo,
+.table_head_fecha,
+.table_head_monto {
+    border-right: rgba(0, 0, 0, 0.144) 1px solid;
+}
+.debit_list_row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+}
+.debit_list_row:hover {
+    transition: ease-in 0.3s;
+    background-color: #71d2ff2d;
+}
+.debit_list_data {
+    padding: 7px 12px;
+    max-width: 200px;
+    min-width: 48px;
+}
+.number_data {
+    text-align: center;
+}
+
+.comment_data > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.contenido_tabla_deuda {
+    height: 300px;
+    overflow-y: auto;
+    box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.137);
+    border-radius: 0 0 7px 7px;
+}
+
+.form-check-input {
+    box-sizing: border-box;
+    height: 1.3em;
+    border: #868789 1px solid;
+    width: 2.5em;
+    margin-left: -3em;
 }

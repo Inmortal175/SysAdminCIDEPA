@@ -1,4 +1,20 @@
-<label class="input">
-  <input class="input__field" [type]="type" placeholder=" " [value]="content" (input)="changeText($event)" />
-  <span class="input__label">{{ label_field }}</span>
-</label>
+<div class="col position-relative mb-3">
+    <label [for]="label_field" class="form-label">
+        {{ label_field }}
+        <span *ngIf="invalidFeedBack !== 'Escribe un feed back'" class="required_field">*</span>
+    </label>
+    <input
+        type="text"
+        class="form-control"
+        [id]="label_field"
+        [type]="type"
+        placeholder="{{ label_field }}"
+        [value]="content"
+        (input)="changeText($event)"
+        [ngClass]="ngClass"
+        [disabled]="IsDisabled" />
+    <!-- <span class="input__label">{{ label_field }}</span> -->
+    <div class="invalid-feedback">
+        {{ invalidFeedBack }}
+    </div>
+</div>
